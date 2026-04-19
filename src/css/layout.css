@@ -1,0 +1,110 @@
+/*
+WEBSITE PALETTE:
+
+#00BFFF-BRIGHT BLUE
+#FF69B4-HOT PINK
+#FFB6C1-LIGHT PINK
+#DA70D6- ORCHID PURPLE
+#e0ac4af1-brown/orange
+
+*/
+.site-header{
+    text-align: left;
+    font-size: 5vh;
+    background-color: #FFB6C1;
+} 
+.main-nav{
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    gap: 10vw;
+    top:10%;
+   background-color: #FFB6C1;
+} 
+.main-nav a{
+    font-size: 3vh;
+    text-align: right;
+}
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color:
+}
+
+/*weekly specials*/
+.weekly{
+    background: #FF69B4;
+    text-align: center;
+    padding: 40px 20px;
+}
+.weekly-grid{
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto 20px;
+}
+.weekly .box{
+    background: #ccc;
+    height: 300px;
+    width: 300px;
+}
+.weekly .box-wide{
+    background: #ccc;
+    height: 300px;
+    width: 300px;
+     
+}
+.weekly button{
+    padding:12px 25px;
+    border: 2px solid black;
+    background: #e0ac4af1;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/*product section*/
+.products{
+display: grid;
+grid-template-columns: 1fr 2fr 1fr;
+gap: 20px;
+max-width: 1000px;
+margin: auto;
+align-items: center;
+
+}
+
+.col{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+
+}
+.box{
+    background: #bbb;
+    height: 120px;
+    position: right ;
+}
+
+/*large center image*/
+.box-large{
+    height: 260px;
+    background: #bbb;
+}
+
+a .box{
+    transition: 0.3s;
+}
+ a:hover .box{
+    opacity: 0.7;
+    transform: scale(1.03);
+ }
+ .categories{
+margin: top;
+font-weight: bold;
+ }
+ .footer{
+    background: #FF69B4;
+    text-align: center;
+    padding: 40px 20px;
+}
