@@ -1,0 +1,145 @@
+<!-- ================== SECTION: ORDER ONLINE ================== -->
+<section id="section-order" class="tab-view blur-in hidden py-12 text-[#3D292B]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-center max-w-xl mx-auto space-y-4 mb-16">
+      <span class="text-[#DE7281] text-xs font-bold uppercase tracking-widest block">Instant Platter Pre-Orders</span>
+      <h1 class="font-serif text-4xl sm:text-5xl font-bold tracking-tight text-[#3D292B]">Order <span class="text-[#DE7281] italic font-medium font-serif">Online</span></h1>
+      <p class="text-[#3D292B]/70 text-sm max-w-md mx-auto leading-relaxed">
+        Select standard pastries and boxes, assemble your platter basket, and send your finalized checklist straight to WhatsApp.
+      </p>
+      <div class="w-16 h-[2px] bg-[#DE7281] mx-auto rounded-full mt-3"></div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      
+      <!-- Quick Pre-Order Add List (Left Box) -->
+      <div class="lg:col-span-6 space-y-8">
+        <div class="bg-white rounded-[32px] border border-[#F7DDD6]/30 p-8 shadow-sm">
+          <h2 class="font-serif text-xl font-bold mb-6 flex items-center gap-2">
+            <svg class="w-5 h-5 text-[#DE7281]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 21l8.904-4.452L21 9l-2.247-2.247M9.813 15.904L9 21l-4.452-8.904L9 9l2.247 2.247M9.813 15.904l7.196-7.196M9 9L3 3M15 15l6 6"></path></svg>
+            Quick Bakery Pre-order Boxes
+          </h2>
+
+          <div class="space-y-4" id="quick-order-boxes-list">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+
+        <!-- General FAQ Notice -->
+        <div class="bg-[#FAECE8]/30 rounded-[32px] border border-[#F7DDD6]/30 p-6 flex gap-4 items-start">
+          <svg class="w-5 h-5 text-[#DE7281] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 111.085 1.086L12.9 14.5a.75.75 0 01-1.085-1.086H12v-2.25zM12 7.5h.008v.008H12V7.5zM21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <div class="space-y-1.5 font-medium text-xs text-[#3D292B]/80 leading-relaxed">
+            <p class="font-bold text-[#3D292B]">Bake Schedule Notice:</p>
+            <p>Standard treat and pastry boxes require at least 24 hours pre-bake warning. Large tailored party cakes require 3-5 days leadtime. If you have an urgent order list or dietary questions, talk directly to Sarah first.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pre-order Checkout Form (Right Box) -->
+      <div class="lg:col-span-6 bg-white rounded-[40px] border border-[#F7DDD6]/30 p-8 sm:p-10 shadow-sm text-[#3D292B]">
+        <h2 class="font-serif text-xl font-bold mb-6 flex items-center gap-2">
+          <svg class="w-5 h-5 text-[#DE7281]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"></path></svg>
+          Your Pre-Order Basket
+        </h2>
+
+        <form id="checkout-receipt-form" onsubmit="processCheckoutForm(event)" class="space-y-6">
+          
+          <!-- Items List -->
+          <div id="checkout-items-wrapper" class="space-y-3.5 max-h-56 overflow-y-auto pr-1">
+            <!-- Generated dynamically in JavaScript -->
+          </div>
+
+          <!-- Price Estimator -->
+          <div id="checkout-pricing-card" class="bg-[#FAECE8]/30 rounded-2xl p-4 border border-[#F7DDD6]/30 space-y-2.5 text-xs font-medium">
+            <div class="flex justify-between">
+              <span class="text-[#3D292B]/60">Items Subtotal:</span>
+              <span class="font-bold" id="checkout-subtotal">R0</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-[#3D292B]/60">Pretoria Delivery Fee:</span>
+              <span id="checkout-delivery-fee">Free (Collection)</span>
+            </div>
+            <div class="h-[1.5px] bg-[#F7DDD6]/60 my-2"></div>
+            <div class="flex justify-between text-sm font-bold text-[#9B2D3C]">
+              <span>Total Estimate Payment:</span>
+              <span id="checkout-grand-total">R0</span>
+            </div>
+          </div>
+
+          <!-- Client Coordinates Fields -->
+          <div class="space-y-4" id="checkout-coordinates-fields">
+            <h3 class="font-serif font-bold text-sm text-[#3D292B] border-b border-[#FAECE8] pb-1">Pre-order Coordinates</h3>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="space-y-1">
+                <label class="text-[10px] font-bold uppercase tracking-wider text-[#3D292B]/60 block">Contact Name *</label>
+                <input 
+                  type="text" 
+                  id="checkout-name" 
+                  required 
+                  placeholder="Your Name" 
+                  class="w-full bg-[#FAECE8]/20 border border-[#F7DDD6]/70 rounded-xl py-2 px-3 text-xs focus:outline-hidden focus:ring-1 focus:ring-[#DE7281]/40 text-[#3D292B]"
+                />
+              </div>
+
+              <div class="space-y-1">
+                <label class="text-[10px] font-bold uppercase tracking-wider text-[#3D292B]/60 block">Phone Number *</label>
+                <input 
+                  type="tel" 
+                  id="checkout-phone" 
+                  required 
+                  placeholder="Your Mobile Phone" 
+                  class="w-full bg-[#FAECE8]/20 border border-[#F7DDD6]/70 rounded-xl py-2 px-3 text-xs focus:outline-hidden focus:ring-1 focus:ring-[#DE7281]/40 text-[#3D292B]"
+                />
+              </div>
+            </div>
+
+            <!-- Fulfillment Strategy -->
+            <div class="space-y-2">
+              <label class="text-[10px] font-bold uppercase tracking-wider text-[#3D292B]/60 block">Fulfillment Strategy</label>
+              <div class="grid grid-cols-2 gap-3">
+                <button type="button" onclick="setFulfillment('collection')" id="fulfillment-collection-btn" class="border rounded-xl p-3 flex items-center justify-center gap-2 cursor-pointer transition-colors text-xs font-semibold border-[#DE7281] bg-[#FAECE8]/40 text-[#9B2D3C]">
+                  Collect from Pretoria HQ
+                </button>
+                <button type="button" onclick="setFulfillment('delivery')" id="fulfillment-delivery-btn" class="border rounded-xl p-3 flex items-center justify-center gap-2 cursor-pointer transition-colors text-xs font-semibold border-[#F7DDD6] bg-transparent text-[#3D292B] hover:bg-[#FAECE8]/15">
+                  Home Delivery (+R50)
+                </button>
+              </div>
+            </div>
+
+            <!-- Address Slot if Delivery Selected -->
+            <div class="space-y-1 hidden" id="checkout-address-box">
+              <label class="text-[10px] font-bold uppercase tracking-wider text-[#3D292B]/60 block">Pretoria Delivery Address *</label>
+              <input 
+                type="text" 
+                id="checkout-address" 
+                placeholder="Street name, suburb, Pretoria" 
+                class="w-full bg-[#FAECE8]/20 border border-[#F7DDD6]/70 rounded-xl py-2 px-3 text-xs focus:outline-hidden focus:ring-1 focus:ring-[#DE7281]/40 text-[#3D292B]"
+              />
+            </div>
+
+            <div class="space-y-1">
+              <label class="text-[10px] font-bold uppercase tracking-wider text-[#3D292B]/60 block">Writing requests or Special instructions</label>
+              <textarea 
+                id="checkout-instructions" 
+                rows="2" 
+                placeholder="e.g. Please ice 'Happy Anniversary Emily' on the chocolate cake in red icing cream..." 
+                class="w-full bg-[#FAECE8]/20 border border-[#F7DDD6]/70 rounded-xl py-2 px-3 text-xs focus:outline-hidden focus:ring-1 focus:ring-[#DE7281]/40 text-[#3D292B]"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="w-full bg-[#DE7281] hover:bg-[#9B2D3C] text-white font-display font-semibold py-4 rounded-full text-sm tracking-wide transition-all duration-300 shadow-md shadow-[#DE7281]/25 flex items-center justify-center gap-2 uppercase">
+              <svg class="w-4 h-4 fill-white text-[#DE7281]" viewBox="0 0 24 24"><path d="M12.03 2c-5.52 0-10 4.48-10 10 0 1.76.46 3.42 1.27 4.88L2 22l5.27-1.38C8.68 21.39 10.3 22 12.03 22c5.52 0 10-4.48 10-10S17.55 2 12.03 2zm-.03 18c-1.57 0-3.04-.43-4.31-1.18l-.31-.18-3.2.84.85-3.12-.2-.32c-.81-1.29-1.23-2.79-1.23-4.34 0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm4.51-6.19c-.25-.12-1.47-.73-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.66.81-.81.98-.15.17-.3.2-.55.08-.25-.12-1.07-.4-2.03-1.26-.75-.67-1.25-1.51-1.4-1.76-.15-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.13-.15.17-.25.26-.42.09-.17.04-.32-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.5-.41-.43-.56-.44-.15-.01-.32-.01-.48-.01s-.42.06-.64.3c-.22.24-.85.83-.85 2.03s.87 2.35.99 2.51c.12.16 1.72 2.63 4.16 3.68.58.25 1.03.4 1.39.51.58.18 1.11.16 1.53.1.47-.07 1.47-.6 1.67-1.18.2-.58.2-1.08.14-1.18-.06-.1-.23-.16-.48-.28z"/></svg>
+              Send Pre-Order Checklist to WhatsApp
+            </button>
+
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,165 @@
+<!-- ================== SECTION: CONTACT ================== -->
+<section id="section-contact" class="tab-view blur-in hidden py-12 text-[#3D292B]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center max-w-xl mx-auto space-y-4 mb-16">
+      <span class="text-[#DE7281] text-xs font-bold uppercase tracking-widest block">Quick Contact</span>
+      <h1 class="font-serif text-4xl sm:text-5xl font-bold tracking-tight text-[#3D292B]">Say <span class="text-[#DE7281] italic font-medium font-serif">Hello!</span></h1>
+      <p class="text-[#3D292B]/70 text-sm max-w-md mx-auto leading-relaxed">
+        Got a question about a custom cake, pricing, allergies, or just want to say hello? We'd love to hear from you!
+      </p>
+      <div class="w-16 h-[2px] bg-[#DE7281] mx-auto rounded-full mt-3"></div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+
+      <!-- Left: Contact Form -->
+      <div class="lg:col-span-7 bg-white rounded-[40px] border border-[#F7DDD6]/35 p-8 sm:p-10 shadow-sm">
+        <h2 class="font-serif text-2xl font-bold tracking-tight mb-8 text-[#3D292B]">Send us a message</h2>
+
+        <form id="contact-general-form" onsubmit="submitGeneralContact(event)" class="space-y-6">
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="space-y-1">
+              <label class="text-xs font-bold uppercase tracking-wider text-[#3D292B]/70 block">Full Name *</label>
+              <input 
+                type="text" 
+                id="contact-name" 
+                required 
+                placeholder="e.g. Sandra Bullock" 
+                class="w-full bg-[#FAECE8]/40 border border-[#F7DDD6]/80 rounded-2xl py-3 px-4 text-sm focus:outline-hidden focus:ring-2 focus:ring-[#DE7281]/40 text-[#3D292B]"
+              />
+            </div>
+
+            <div class="space-y-1">
+              <label class="text-xs font-bold uppercase tracking-wider text-[#3D292B]/70 block">Email Address (Optional)</label>
+              <input 
+                type="email" 
+                id="contact-email" 
+                placeholder="e.g. sandra@bul.com" 
+                class="w-full bg-[#FAECE8]/40 border border-[#F7DDD6]/80 rounded-2xl py-3 px-4 text-sm focus:outline-hidden focus:ring-2 focus:ring-[#DE7281]/40 text-[#3D292B]"
+              />
+            </div>
+          </div>
+
+          <div class="space-y-1">
+            <label class="text-xs font-bold uppercase tracking-wider text-[#3D292B]/70 block">Phone Number</label>
+            <input 
+              type="tel" 
+              id="contact-phone" 
+              placeholder="e.g. 082 113 4567" 
+              class="w-full bg-[#FAECE8]/40 border border-[#F7DDD6]/80 rounded-2xl py-3 px-4 text-sm focus:outline-hidden focus:ring-2 focus:ring-[#DE7281]/40 text-[#3D292B]"
+            />
+          </div>
+
+          <div class="space-y-1">
+            <label class="text-xs font-bold uppercase tracking-wider text-[#3D292B]/70 block">Your Message *</label>
+            <textarea 
+              id="contact-message" 
+              required 
+              rows="5" 
+              placeholder="Ask about wedding cakes, pricing quotes, dietary allergies, or tailored order slots..." 
+              class="w-full bg-[#FAECE8]/40 border border-[#F7DDD6]/80 rounded-2xl py-3 px-4 text-sm focus:outline-hidden focus:ring-2 focus:ring-[#DE7281]/40 text-[#3D292B]"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="w-full bg-[#DE7281] hover:bg-[#9B2D3C] text-white font-display font-semibold py-4 rounded-full text-base tracking-wide transition-all duration-300 shadow-md shadow-[#DE7281]/25 flex items-center justify-center gap-2">
+            <svg class="w-4 h-4 text-white fill-current" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+            Send Inquiry Message
+          </button>
+
+        </form>
+      </div>
+
+      <!-- Right: Contact Info, Map, Hours -->
+      <div class="lg:col-span-5 space-y-8">
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <a href="https://wa.me/27821134567" target="_blank" rel="noopener noreferrer" class="bg-white hover:bg-[#FAECE8]/40 border border-[#F7DDD6]/35 p-5 rounded-3xl transition-all duration-300 flex flex-col justify-between group h-32">
+            <div class="w-9 h-9 rounded-xl bg-[#FAECE8] flex items-center justify-center">
+              <svg class="w-5 h-5 text-[#DE7281]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.387a12.035 12.035 0 01-7.108-7.108c-.155-.44.011-.928.387-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"></path></svg>
+            </div>
+            <div>
+              <h4 class="text-[10px] uppercase font-bold text-[#3D292B]/50 tracking-wider">WhatsApp Line</h4>
+              <p class="text-xs font-bold text-[#3D292B] group-hover:text-[#9B2D3C] mt-0.5">082 113 4567</p>
+            </div>
+          </a>
+
+          <a href="mailto:hello@sweetcrumbs.co.za" class="bg-white hover:bg-[#FAECE8]/40 border border-[#F7DDD6]/35 p-5 rounded-3xl transition-all duration-300 flex flex-col justify-between group h-32">
+            <div class="w-9 h-9 rounded-xl bg-[#FAECE8] flex items-center justify-center">
+              <svg class="w-5 h-5 text-[#DE7281]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"></path></svg>
+            </div>
+            <div>
+              <h4 class="text-[10px] uppercase font-bold text-[#3D292B]/50 tracking-wider">Email Address</h4>
+              <p class="text-xs font-bold text-[#3D292B] group-hover:text-[#9B2D3C] mt-0.5">hello@sweetcrumbs.co.za</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Vector Spot Map -->
+        <div class="bg-white rounded-[40px] border border-[#F7DDD6]/35 p-6 space-y-4 shadow-sm relative overflow-hidden">
+          <h3 class="font-serif font-bold text-base text-[#3D292B] flex items-center gap-1.5 leading-none">
+            📍 Brooklyn Spot, Pretoria
+          </h3>
+
+          <div class="bg-[#FDF9F7] border border-[#F7DDD6]/40 h-36 rounded-2xl relative overflow-hidden flex items-center justify-center">
+            <div class="absolute top-0 bottom-0 left-12 w-[1.5px] bg-[#F7DDD6]"></div>
+            <div class="absolute top-0 bottom-0 left-28 w-[1.5px] bg-[#F7DDD6]/70"></div>
+            <div class="absolute top-12 left-0 right-0 h-[1.5px] bg-[#F7DDD6]"></div>
+            <div class="absolute top-24 left-0 right-0 h-[1.5px] bg-[#F7DDD6]"></div>
+            <div class="absolute top-1/2 left-0 right-0 h-4 bg-[#FAECE8]/50 transform -rotate-6"></div>
+            <div class="absolute top-0 bottom-0 left-[60%] w-6 bg-[#FAECE8]/60 transform rotate-12"></div>
+
+            <div class="absolute top-4 right-4 w-12 h-10 rounded-xl bg-green-50 justify-center flex items-center">
+              <span class="text-[10px] text-green-600 font-bold font-sans select-none">Park</span>
+            </div>
+
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+              <div class="relative">
+                <div class="absolute -inset-1 bg-[#DE7281]/30 rounded-full animate-ping"></div>
+                <div class="w-5 h-5 rounded-full bg-[#9B2D3C] flex items-center justify-center shadow-lg border-2 border-white z-10 relative">
+                  <svg class="w-2.5 h-2.5 text-white fill-current" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                </div>
+              </div>
+              <span class="bg-white border border-[#F7DDD6]/60 rounded-lg px-2.5 py-0.5 text-[9px] font-bold shadow-md text-[#9B2D3C] mt-1 uppercase select-none font-display">Sweet Crumbs</span>
+            </div>
+          </div>
+
+          <div class="text-[10px] font-semibold text-[#3D292B]/50 text-center uppercase tracking-wide">
+            Brooklyn, Pretoria Central, South Africa
+          </div>
+        </div>
+
+        <!-- Hours Card -->
+        <div class="bg-[#FAECE8]/40 rounded-[35px] border border-[#F7DDD6]/35 p-6 space-y-4">
+          <h3 class="font-serif font-bold text-base text-[#3D292B] flex items-center gap-2">
+            <svg class="w-4 h-4 text-[#DE7281]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            Cooking Hours
+          </h3>
+
+          <div class="space-y-2.5 font-medium text-sm">
+            <div class="flex justify-between border-b border-[#F7DDD6]/30 pb-2">
+              <span class="text-[#3D292B]/70 font-semibold">Monday - Friday</span>
+              <span class="text-[#3D292B] font-bold">9:00 AM - 5:00 PM</span>
+            </div>
+            <div class="flex justify-between border-b border-[#F7DDD6]/30 pb-2">
+              <span class="text-[#3D292B]/70 font-semibold">Saturday</span>
+              <span class="text-[#3D292B] font-bold">9:00 AM - 2:00 PM</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-[#3D292B]/70 font-semibold">Sunday</span>
+              <span class="text-[#9B2D3C] font-extrabold uppercase tracking-wide">Closed</span>
+            </div>
+          </div>
+
+          <p class="text-[10px] text-[#3D292B]/50 font-bold text-center italic mt-2 uppercase tracking-wide">
+            Thank you for supporting my small local business! ❤️
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>

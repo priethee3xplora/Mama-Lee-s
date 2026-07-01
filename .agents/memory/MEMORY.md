@@ -1,0 +1,2 @@
+- [Sweet Crumbs component architecture](sweet-crumbs-arch.md) — HTML snippets fetched at runtime by main.js; window globals bound AFTER fetch completes or inline onclick breaks
+- [Sweet Crumbs image paths](sweet-crumbs-images.md) — Local /src/assets/images/* do not exist; use Unsplash URLs in component files

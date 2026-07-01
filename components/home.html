@@ -1,0 +1,145 @@
+<!-- ================== SECTION: HOME ================== -->
+<section id="section-home" class="tab-view blur-in">
+  
+  <!-- Hero Cover Area -->
+  <div class="pt-8 pb-20 relative bg-gradient-to-b from-[#FAECE8]/50 to-[#FDF9F7] overflow-hidden">
+    <div class="absolute top-20 right-[-100px] w-[350px] h-[350px] rounded-full bg-[#FAECE8]/30 blur-3xl z-0"></div>
+    <div class="absolute bottom-10 left-[-100px] w-[400px] h-[400px] rounded-full bg-[#F7DDD6]/20 blur-3xl z-0"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Left Details -->
+        <div class="lg:col-span-6 space-y-8 text-center lg:text-left">
+          <div class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white border border-[#F7DDD6]/55 text-[#9B2D3C] text-xs font-semibold uppercase tracking-wider shadow-sm">
+            <svg class="w-3.5 h-3.5 text-[#DE7281] fill-[#DE7281]" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            Pretoria&#39;s Loveliest Bakery
+          </div>
+          
+          <h1 class="font-serif text-5xl sm:text-6xl lg:text-[70px] leading-tight font-bold text-[#3D292B] tracking-tight">
+            Freshly Baked <br />
+            <span class="text-gradient bg-gradient-to-r from-[#DE7281] to-[#9B2D3C] bg-clip-text text-transparent font-medium italic">Happiness</span>
+          </h1>
+          
+          <p class="text-[#3D292B]/85 text-lg sm:text-xl font-light max-w-xl mx-auto lg:mx-0 leading-relaxed">
+            Homemade cakes, artisan pastries, cupcakes and custom sweet showstoppers baked daily in Pretoria with love and the finest ingredients.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
+            <button onclick="switchTab('order')" class="bg-[#DE7281] hover:bg-[#9B2D3C] text-white font-display font-semibold px-8 py-4 rounded-full text-base tracking-wide transition-all duration-300 shadow-lg shadow-[#DE7281]/25 cursor-pointer transform hover:-translate-y-0.5 select-none">
+              Order Online
+            </button>
+            <button onclick="document.getElementById('popular-section').scrollIntoView({ behavior: 'smooth' })" class="bg-white border-2 border-[#F7DDD6]/80 hover:bg-[#FAECE8] text-[#3D292B] font-display font-semibold px-8 py-4 rounded-full text-base tracking-wide transition-colors duration-300 shadow-sm cursor-pointer select-none">
+              View Popular Menu
+            </button>
+          </div>
+
+          <!-- Trust Badges -->
+          <div class="flex justify-center lg:justify-start items-center gap-6 pt-4 text-xs font-semibold text-[#3D292B]/70">
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-[#D3A26A] fill-[#D3A26A]" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              4.9/5 Star Reviews
+            </span>
+            <span class="w-1.5 h-1.5 rounded-full bg-[#F7DDD6]"></span>
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-[#DE7281]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 21l8.904-4.452L21 9l-2.247-2.247M9.813 15.904L9 21l-4.452-8.904L9 9l2.247 2.247M9.813 15.904l7.196-7.196M9 9L3 3M15 15l6 6"></path></svg>
+              100% Homemade
+            </span>
+          </div>
+
+        </div>
+
+        <!-- Right Cover Cake Stand -->
+        <div class="lg:col-span-6 flex justify-center">
+          <div class="relative w-full max-w-lg">
+            <div class="absolute inset-0 bg-[#F7DDD6]/40 rounded-full filter blur-xl opacity-70 transform rotate-12 scale-105"></div>
+            
+            <div class="relative z-10 border-[12px] border-white rounded-[40px] shadow-2xl bg-white overflow-hidden aspect-[4/3] sm:aspect-square flex items-center justify-center">
+              <img 
+                src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?auto=format&fit=crop&q=80&w=900" 
+                alt="Luxury Freshly Baked Strawberry Layer Cake" 
+                class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+
+            <!-- Overlay floating tag -->
+            <div class="absolute -bottom-6 -right-6 bg-white border border-[#F7DDD6]/50 rounded-2xl p-4 shadow-xl z-20 flex items-center gap-3 animate-pulse">
+              <div class="w-10 h-10 rounded-full bg-[#FAECE8] flex items-center justify-center text-xl">🍰</div>
+              <div>
+                <h5 class="font-serif font-bold text-xs text-[#3D292B]">Pre-Order Now!</h5>
+                <p class="text-[10px] text-[#DE7281] font-medium">Pretoria Pickup & Delivery</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom wavy divider -->
+    <div class="absolute bottom-0 left-0 right-0 overflow-hidden leading-none z-10">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-full h-[40px] text-[#FDF9F7] fill-current">
+        <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1130.5,123.6,1055.3,107.1,985.66,92.83Z"></path>
+      </svg>
+    </div>
+
+  </div>
+
+  <!-- Popular Treats Grid -->
+  <div id="popular-section" class="py-20 bg-[#FDF9F7] scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-xl mx-auto space-y-4 mb-16">
+        <h2 class="font-serif text-4xl font-bold tracking-tight text-[#3D292B]">
+          Our Popular Treats
+        </h2>
+        <p class="text-[#3D292B]/70 text-sm">
+          Baked fresh every morning in small batches to guarantee supreme crumb moisture and ultimate flavor balance. These are Pretoria&#39;s favorite desserts!
+        </p>
+        <div class="w-16 h-[2px] bg-[#DE7281] mx-auto rounded-full mt-3"></div>
+      </div>
+
+      <div class="grid grid-cols-2 lg:grid-cols-6 gap-4 sm:gap-6" id="home-treats-list">
+        <!-- Rendered via JavaScript -->
+      </div>
+
+      <div class="text-center mt-12">
+        <button onclick="switchTab('menu')" class="inline-flex items-center gap-2 bg-[#DE7281] hover:bg-[#9B2D3C] text-white font-display font-semibold py-3.5 px-8 rounded-full text-sm tracking-wide transition-all duration-350 cursor-pointer shadow-md shadow-[#DE7281]/10">
+          View Full Menu
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path></svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Highlights & Guarantees section -->
+  <div class="py-20 bg-gradient-to-b from-[#FDF9F7] to-[#FAECE8]/30 border-t border-[#F7DDD6]/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white/80 p-8 rounded-[32px] border border-[#F7DDD6]/40 hover:border-[#DE7281]/35 hover:bg-white text-center transition-all duration-300">
+          <div class="w-16 h-16 rounded-2xl bg-[#FAECE8] flex items-center justify-center text-3xl mx-auto shadow-sm mb-6">🧁</div>
+          <h3 class="font-serif font-bold text-xl text-[#3D292B] mb-3">Handmade Daily</h3>
+          <p class="text-[#3D292B]/70 text-sm leading-relaxed max-w-xs mx-auto">Baked fresh every single morning, specifically for beautiful morning high teas and local dinner parties.</p>
+        </div>
+
+        <div class="bg-white/80 p-8 rounded-[32px] border border-[#F7DDD6]/40 hover:border-[#DE7281]/35 hover:bg-white text-center transition-all duration-300">
+          <div class="w-16 h-16 rounded-2xl bg-[#FAECE8] flex items-center justify-center text-3xl mx-auto shadow-sm mb-6">🎂</div>
+          <h3 class="font-serif font-bold text-xl text-[#3D292B] mb-3">Bespoke Custom Cakes</h3>
+          <p class="text-[#3D292B]/70 text-sm leading-relaxed max-w-xs mx-auto">Designed beautifully for your unique celebration, wedding anniversary, major event, or theme birthday.</p>
+        </div>
+
+        <div class="bg-white/80 p-8 rounded-[32px] border border-[#F7DDD6]/40 hover:border-[#DE7281]/35 hover:bg-white text-center transition-all duration-300">
+          <div class="w-16 h-16 rounded-2xl bg-[#FAECE8] flex items-center justify-center text-3xl mx-auto shadow-sm mb-6">🍓</div>
+          <h3 class="font-serif font-bold text-xl text-[#3D292B] mb-3">Premium Ingredients</h3>
+          <p class="text-[#3D292B]/70 text-sm leading-relaxed max-w-xs mx-auto">We use only organic farm butter, fresh local strawberries, premium Belgian cocoa, and rich vanilla seeds.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
