@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-display: "Space Grotesk", sans-serif;
+  
+  --color-brand-cream: #FDF9F7;
+  --color-brand-softpink: #FAECE8;
+  --color-brand-pink: #F7DDD6;
+  --color-brand-rose: #DE7281;
+  --color-brand-crimson: #9B2D3C;
+  --color-brand-charcoal: #3D292B;
+  --color-brand-gold: #D3A26A;
+}
+
+body {
+  background-color: var(--color-brand-cream);
+  color: var(--color-brand-charcoal);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FDF9F7;
+}
+::-webkit-scrollbar-thumb {
+  background: #DE7281;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9B2D3C;
+}
+
+/* Smooth motion utility classes */
+.blur-in {
+  animation: blurIn 0.5s ease-out forwards;
+}
+
+@keyframes blurIn {
+  from {
+    filter: blur(8px);
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    filter: blur(0);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

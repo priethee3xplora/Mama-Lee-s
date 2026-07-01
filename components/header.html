@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <!-- Sticky Main Header -->
+<header class="sticky top-0 z-40 bg-[#FDF9F7]/90 backdrop-blur-md border-b border-[#F7DDD6]/50 transition-all duration-350">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
+      
+      <!-- Logo Brand Area -->
+      <div class="flex items-center gap-2 cursor-pointer group" onclick="switchTab('home')">
+        <div class="w-12 h-12 rounded-full overflow-hidden border border-[#DE7281]/30 bg-[#FAECE8] flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+          <img 
+            src="/src/assets/images/sweet_crumbs_logo_1781362950306.jpg" 
+            alt="Sweet Crumbs Logo" 
+            class="w-full h-full object-cover"
+            referrerpolicy="no-referrer"
+          />
+        </div>
+        <div class="flex flex-col">
+          <span class="font-serif text-xl tracking-wide font-semibold text-[#3D292B] group-hover:text-[#DE7281] transition-colors duration-200">
+           name
+          </span>
+          <span class="text-[10px] uppercase tracking-widest text-[#DE7281] font-medium mt-[-2px] select-none">
+            slogan
+          </span>
+        </div>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-8">
+        <button onclick="switchTab('home')" id="nav-home" class="relative py-2 font-display text-[15px] font-medium tracking-wide text-[#9B2D3C] cursor-pointer transition-colors duration-200">
+          Home
+          <span class="absolute bottom-0 left-0 right-0 h-[2px] bg-[#DE7281] rounded-full header-indicator"></span>
+        </button>
+        <button onclick="switchTab('menu')" id="nav-menu" class="relative py-2 font-display text-[15px] font-medium tracking-wide text-[#3D292B]/80 hover:text-[#DE7281] cursor-pointer transition-colors duration-200">
+          Menu
+          <span class="absolute bottom-0 left-0 right-0 h-[2px] bg-[#DE7281] rounded-full header-indicator hidden"></span>
+        </button>
+        <button onclick="switchTab('custom')" id="nav-custom" class="relative py-2 font-display text-[15px] font-medium tracking-wide text-[#3D292B]/80 hover:text-[#DE7281] cursor-pointer transition-colors duration-200">
+          Custom Cakes
+          <span class="absolute bottom-0 left-0 right-0 h-[2px] bg-[#DE7281] rounded-full header-indicator hidden"></span>
+        </button>
+        <button onclick="switchTab('about')" id="nav-about" class="relative py-2 font-display text-[15px] font-medium tracking-wide text-[#3D292B]/80 hover:text-[#DE7281] cursor-pointer transition-colors duration-200">
+          About Us
+          <span class="absolute bottom-0 left-0 right-0 h-[2px] bg-[#DE7281] rounded-full header-indicator hidden"></span>
+        </button>
+        <button onclick="switchTab('order')" id="nav-order" class="relative py-2 font-display text-[15px] font-medium tracking-wide text-[#3D292B]/80 hover:text-[#DE7281] cursor-pointer transition-colors duration-200">
+          Order Online
+          <span class="absolute bottom-0 left-0 right-0 h-[2px] bg-[#DE7281] rounded-full header-indicator hidden"></span>
+        </button>
+        <button onclick="switchTab('contact')" id="nav-contact" class="relative py-2 font-display text-[15px] font-medium tracking-wide text-[#3D292B]/80 hover:text-[#DE7281] cursor-pointer transition-colors duration-200">
+          Contact
+          <span class="absolute bottom-0 left-0 right-0 h-[2px] bg-[#DE7281] rounded-full header-indicator hidden"></span>
+        </button>
+      </nav>
+
+      <!-- Quick Actions Panel -->
+      <div class="flex items-center gap-4">
+        
+        <!-- Basket Button -->
+        <div class="relative">
+          <button onclick="toggleBasketDropdown()" class="p-2.5 rounded-full hover:bg-[#FAECE8] text-[#3D292B] relative transition-all duration-200 cursor-pointer" title="View Basket">
+            <svg class="w-5 h-5 text-[#3D292B]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"></path></svg>
+            <span id="basket-badge" class="absolute -top-0.5 -right-0.5 bg-[#9B2D3C] text-white font-sans text-[11px] font-bold w-5 h-5 rounded-full hidden items-center justify-center border-2 border-[#FDF9F7]">0</span>
+          </button>
+
+          <!-- Mini Basket Popup -->
+          <div id="basket-dropdown" class="absolute right-0 mt-3 w-80 bg-white rounded-2xl shadow-2xl border border-[#F7DDD6]/50 p-4 hidden z-50 text-[#3D292B]">
+            <div class="flex justify-between items-center pb-3 border-b border-[#FAECE8]">
+              <h4 class="font-serif font-medium text-lg flex items-center gap-2">
+                <svg class="w-4 h-4 text-[#DE7281]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5"></path></svg> My Basket
+              </h4>
+              <button onclick="toggleBasketDropdown()" class="p-1 hover:bg-[#FAECE8] rounded-full text-[#3D292B]/40 hover:text-[#3D292B] cursor-pointer">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+              </button>
+            </div>
+
+            <div class="text-center py-8 text-[#3D292B]/50" id="basket-empty-view">
+              <svg class="w-8 h-8 mx-auto text-[#F7DDD6] stroke-1 mb-2 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"></path></svg>
+              <p class="text-sm font-medium">Your basket is empty</p>
+              <button onclick="toggleBasketDropdown(); switchTab('menu');" class="text-xs text-[#DE7281] underline font-semibold mt-1 hover:text-[#9B2D3C] cursor-pointer">
+                Explore our menu
+              </button>
+            </div>
+
+            <div id="basket-dropdown-items" class="max-h-60 overflow-y-auto py-2 space-y-3 hidden">
+              <!-- Generated dynamically in JavaScript -->
+            </div>
+
+            <div id="basket-dropdown-footer" class="pt-3 border-t border-[#FAECE8] space-y-3 hidden">
+              <div class="flex justify-between items-center text-sm font-semibold">
+                <span>Total Est:</span>
+                <span class="text-[#9B2D3C]" id="basket-dropdown-total">R0</span>
+              </div>
+              <button onclick="toggleBasketDropdown(); switchTab('order');" class="w-full bg-[#DE7281] hover:bg-[#9B2D3C] text-white font-medium py-2 px-4 rounded-xl text-xs transition-colors duration-200 text-center block cursor-pointer tracking-wider font-display uppercase">
+                Checkout Order
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <button onclick="switchTab('order')" class="bg-[#DE7281] hover:bg-[#9B2D3C] text-white px-5 py-2.5 rounded-full font-display text-sm font-semibold tracking-wide transition-all duration-300 transform shadow-md shadow-[#DE7281]/20 hover:shadow-[#9B2D3C]/20 hidden sm:block select-none cursor-pointer">
+          Order Now
+        </button>
+
+        <!-- Mobile Drawer Menus Trigger -->
+        <button onclick="toggleMobileMenu()" class="p-2 rounded-full hover:bg-[#FAECE8] text-[#3D292B] md:hidden transition-colors duration-200 cursor-pointer" aria-label="Toggle menu">
+          <svg id="mobile-menu-open-icon" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="mobile-menu-close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation Menu Dropdown -->
+  <div id="mobile-nav-panel" class="hidden md:hidden bg-[#FDF9F7] border-b border-[#F7DDD6] p-4 flex flex-col gap-3.5 blur-in">
+    <button onclick="switchTab('home')" class="mobile-nav-btn py-3 px-4 font-display text-base font-semibold tracking-wide rounded-xl text-left transition-colors bg-[#FAECE8] text-[#9B2D3C]">Home</button>
+    <button onclick="switchTab('menu')" class="mobile-nav-btn py-3 px-4 font-display text-base font-semibold tracking-wide rounded-xl text-left transition-colors text-[#3D292B]/80 hover:bg-[#FAECE8]/50">Menu</button>
+    <button onclick="switchTab('custom')" class="mobile-nav-btn py-3 px-4 font-display text-base font-semibold tracking-wide rounded-xl text-left transition-colors text-[#3D292B]/80 hover:bg-[#FAECE8]/50">Custom Cakes</button>
+    <button onclick="switchTab('about')" class="mobile-nav-btn py-3 px-4 font-display text-base font-semibold tracking-wide rounded-xl text-left transition-colors text-[#3D292B]/80 hover:bg-[#FAECE8]/50">About Us</button>
+    <button onclick="switchTab('order')" class="mobile-nav-btn py-3 px-4 font-display text-base font-semibold tracking-wide rounded-xl text-left transition-colors text-[#3D292B]/80 hover:bg-[#FAECE8]/50">Order Online</button>
+    <button onclick="switchTab('contact')" class="mobile-nav-btn py-3 px-4 font-display text-base font-semibold tracking-wide rounded-xl text-left transition-colors text-[#3D292B]/80 hover:bg-[#FAECE8]/50">Contact</button>
+    <a href="https://wa.me/27821134567" target="_blank" rel="noopener noreferrer" class="w-full bg-[#9B2D3C] text-white hover:bg-[#DE7281] py-3 rounded-xl font-display font-semibold transition-colors mt-2 tracking-wider flex items-center justify-center gap-1.5 cursor-pointer">
+      <svg class="w-4 h-4 fill-white text-[#9B2D3C]" viewBox="0 0 24 24"><path d="M12.03 2c-5.52 0-10 4.48-10 10 0 1.76.46 3.42 1.27 4.88L2 22l5.27-1.38C8.68 21.39 10.3 22 12.03 22c5.52 0 10-4.48 10-10S17.55 2 12.03 2zm-.03 18c-1.57 0-3.04-.43-4.31-1.18l-.31-.18-3.2.84.85-3.12-.2-.32c-.81-1.29-1.23-2.79-1.23-4.34 0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm4.51-6.19c-.25-.12-1.47-.73-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.66.81-.81.98-.15.17-.3.2-.55.08-.25-.12-1.07-.4-2.03-1.26-.75-.67-1.25-1.51-1.4-1.76-.15-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.13-.15.17-.25.26-.42.09-.17.04-.32-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.5-.41-.43-.56-.44-.15-.01-.32-.01-.48-.01s-.42.06-.64.3c-.22.24-.85.83-.85 2.03s.87 2.35.99 2.51c.12.16 1.72 2.63 4.16 3.68.58.25 1.03.4 1.39.51.58.18 1.11.16 1.53.1.47-.07 1.47-.6 1.67-1.18.2-.58.2-1.08.14-1.18-.06-.1-.23-.16-.48-.28z"/></svg> 
+      WhatsApp Order
+    </a>
+  </div>
+</header> 
+</body>
+</html>

@@ -1,0 +1,1055 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mama lee's— Homemade with Love</title>
+    <!-- CSS entry point compiled by Vite and processed with Tailwind CSS -->
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body class="bg-[#FDF9F7] text-[#3D292B] font-sans antialiased overflow-x-hidden selection:bg-[#DE7281] selection:text-white">
+
+<!-- Dynamic Alert Toast Feedback -->
+<div id="alert-toast" class="fixed bottom-6 right-6 z-50 bg-[#3D292B] text-white rounded-2xl py-3.5 px-5 shadow-2xl flex items-center gap-3 border border-[#F7DDD6]/20 max-w-sm hidden transition-all duration-300 transform translate-y-10 opacity-0">
+  <div class="w-6 h-6 rounded-full bg-[#DE7281] text-white flex items-center justify-center">
+    <svg class="w-3.5 h-3.5 stroke-[3.5px] text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path></svg>
+  </div>
+  <p id="alert-toast-text" class="text-xs font-semibold tracking-wide"></p>
+</div>
+
+<!-- Sticky Main Header -->
+<header class="sticky top-0 z-40 bg-[#FDF9F7]/90 backdrop-blur-md border-b border-[#F7DDD6]/50 transition-all duration-350">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
+      
+      <!-- Logo Brand Area -->
+      <div class="flex items-center gap-2 cursor-pointer group" onclick="switchTab('home')">
+        <div class="w-12 h-12 rounded-full overflow-hidden border border-[#DE7281]/30 bg-[#FAECE8] flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+          <img 
+            src="/src/assets/images/sweet_crumbs_logo_1781362950306.jpg" 
+            alt="Sweet Crumbs Logo" 
+            class="w-full h-full object-cover"
+            referrerpolicy="no-referrer"
+          />
+        </div>
+        <div class="flex flex-col">
+          <span class="font-serif text-xl tracking-wide font-semibold text-[#3D292B] group-hover:text-[#DE7281] transition-colors duration-200">
+           name
+          </span>
+          <span class="text-[10px] uppercase tracking-widest text-[#DE7281] font-medium mt-[-2px] select-none">
+            slogan
+          </span>
+        </div>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-8">
+        <button onclick="switchTab('home')" id="nav-home" class="relative py-2 font-display text-[15px] font-medium tracking-wide text-[#9B2D3C] cursor-pointer transition-colors duration-200">
+          Home
+          <span class="absolute bottom-0 left-0 right-0 h-[2px] bg-[#DE7281] rounded-full header-indicator"></span>
+        </button>
+        <button onclick="switchTab('menu')" id="nav-menu" class="relative py-2 font-display text-[15px] font-medium tracking-wide text-[#3D292B]/80 hover:text-[#DE7281] cursor-pointer transition-colors duration-200">
+          Menu
+          <span class="absolute bottom-0 left-0 right-0 h-[2px] bg-[#DE7281] rounded-full header-indicator hidden"></span>
+        </button>
+        <button onclick="switchTab('custom')" id="nav-custom" class="relative py-2 font-display text-[15px] font-medium tracking-wide text-[#3D292B]/80 hover:text-[#DE7281] cursor-pointer transition-colors duration-200">
+          Custom Cakes
+          <span class="absolute bottom-0 left-0 right-0 h-[2px] bg-[#DE7281] rounded-full header-indicator hidden"></span>
+        </button>
+        <button onclick="switchTab('about')" id="nav-about" class="relative py-2 font-display text-[15px] font-medium tracking-wide text-[#3D292B]/80 hover:text-[#DE7281] cursor-pointer transition-colors duration-200">
+          About Us
+          <span class="absolute bottom-0 left-0 right-0 h-[2px] bg-[#DE7281] rounded-full header-indicator hidden"></span>
+        </button>
+        <button onclick="switchTab('order')" id="nav-order" class="relative py-2 font-display text-[15px] font-medium tracking-wide text-[#3D292B]/80 hover:text-[#DE7281] cursor-pointer transition-colors duration-200">
+          Order Online
+          <span class="absolute bottom-0 left-0 right-0 h-[2px] bg-[#DE7281] rounded-full header-indicator hidden"></span>
+        </button>
+        <button onclick="switchTab('contact')" id="nav-contact" class="relative py-2 font-display text-[15px] font-medium tracking-wide text-[#3D292B]/80 hover:text-[#DE7281] cursor-pointer transition-colors duration-200">
+          Contact
+          <span class="absolute bottom-0 left-0 right-0 h-[2px] bg-[#DE7281] rounded-full header-indicator hidden"></span>
+        </button>
+      </nav>
+
+      <!-- Quick Actions Panel -->
+      <div class="flex items-center gap-4">
+        
+        <!-- Basket Button -->
+        <div class="relative">
+          <button onclick="toggleBasketDropdown()" class="p-2.5 rounded-full hover:bg-[#FAECE8] text-[#3D292B] relative transition-all duration-200 cursor-pointer" title="View Basket">
+            <svg class="w-5 h-5 text-[#3D292B]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"></path></svg>
+            <span id="basket-badge" class="absolute -top-0.5 -right-0.5 bg-[#9B2D3C] text-white font-sans text-[11px] font-bold w-5 h-5 rounded-full hidden items-center justify-center border-2 border-[#FDF9F7]">0</span>
+          </button>
+
+          <!-- Mini Basket Popup -->
+          <div id="basket-dropdown" class="absolute right-0 mt-3 w-80 bg-white rounded-2xl shadow-2xl border border-[#F7DDD6]/50 p-4 hidden z-50 text-[#3D292B]">
+            <div class="flex justify-between items-center pb-3 border-b border-[#FAECE8]">
+              <h4 class="font-serif font-medium text-lg flex items-center gap-2">
+                <svg class="w-4 h-4 text-[#DE7281]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5"></path></svg> My Basket
+              </h4>
+              <button onclick="toggleBasketDropdown()" class="p-1 hover:bg-[#FAECE8] rounded-full text-[#3D292B]/40 hover:text-[#3D292B] cursor-pointer">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+              </button>
+            </div>
+
+            <div class="text-center py-8 text-[#3D292B]/50" id="basket-empty-view">
+              <svg class="w-8 h-8 mx-auto text-[#F7DDD6] stroke-1 mb-2 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"></path></svg>
+              <p class="text-sm font-medium">Your basket is empty</p>
+              <button onclick="toggleBasketDropdown(); switchTab('menu');" class="text-xs text-[#DE7281] underline font-semibold mt-1 hover:text-[#9B2D3C] cursor-pointer">
+                Explore our menu
+              </button>
+            </div>
+
+            <div id="basket-dropdown-items" class="max-h-60 overflow-y-auto py-2 space-y-3 hidden">
+              <!-- Generated dynamically in JavaScript -->
+            </div>
+
+            <div id="basket-dropdown-footer" class="pt-3 border-t border-[#FAECE8] space-y-3 hidden">
+              <div class="flex justify-between items-center text-sm font-semibold">
+                <span>Total Est:</span>
+                <span class="text-[#9B2D3C]" id="basket-dropdown-total">R0</span>
+              </div>
+              <button onclick="toggleBasketDropdown(); switchTab('order');" class="w-full bg-[#DE7281] hover:bg-[#9B2D3C] text-white font-medium py-2 px-4 rounded-xl text-xs transition-colors duration-200 text-center block cursor-pointer tracking-wider font-display uppercase">
+                Checkout Order
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <button onclick="switchTab('order')" class="bg-[#DE7281] hover:bg-[#9B2D3C] text-white px-5 py-2.5 rounded-full font-display text-sm font-semibold tracking-wide transition-all duration-300 transform shadow-md shadow-[#DE7281]/20 hover:shadow-[#9B2D3C]/20 hidden sm:block select-none cursor-pointer">
+          Order Now
+        </button>
+
+        <!-- Mobile Drawer Menus Trigger -->
+        <button onclick="toggleMobileMenu()" class="p-2 rounded-full hover:bg-[#FAECE8] text-[#3D292B] md:hidden transition-colors duration-200 cursor-pointer" aria-label="Toggle menu">
+          <svg id="mobile-menu-open-icon" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="mobile-menu-close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation Menu Dropdown -->
+  <div id="mobile-nav-panel" class="hidden md:hidden bg-[#FDF9F7] border-b border-[#F7DDD6] p-4 flex flex-col gap-3.5 blur-in">
+    <button onclick="switchTab('home')" class="mobile-nav-btn py-3 px-4 font-display text-base font-semibold tracking-wide rounded-xl text-left transition-colors bg-[#FAECE8] text-[#9B2D3C]">Home</button>
+    <button onclick="switchTab('menu')" class="mobile-nav-btn py-3 px-4 font-display text-base font-semibold tracking-wide rounded-xl text-left transition-colors text-[#3D292B]/80 hover:bg-[#FAECE8]/50">Menu</button>
+    <button onclick="switchTab('custom')" class="mobile-nav-btn py-3 px-4 font-display text-base font-semibold tracking-wide rounded-xl text-left transition-colors text-[#3D292B]/80 hover:bg-[#FAECE8]/50">Custom Cakes</button>
+    <button onclick="switchTab('about')" class="mobile-nav-btn py-3 px-4 font-display text-base font-semibold tracking-wide rounded-xl text-left transition-colors text-[#3D292B]/80 hover:bg-[#FAECE8]/50">About Us</button>
+    <button onclick="switchTab('order')" class="mobile-nav-btn py-3 px-4 font-display text-base font-semibold tracking-wide rounded-xl text-left transition-colors text-[#3D292B]/80 hover:bg-[#FAECE8]/50">Order Online</button>
+    <button onclick="switchTab('contact')" class="mobile-nav-btn py-3 px-4 font-display text-base font-semibold tracking-wide rounded-xl text-left transition-colors text-[#3D292B]/80 hover:bg-[#FAECE8]/50">Contact</button>
+    <a href="https://wa.me/27821134567" target="_blank" rel="noopener noreferrer" class="w-full bg-[#9B2D3C] text-white hover:bg-[#DE7281] py-3 rounded-xl font-display font-semibold transition-colors mt-2 tracking-wider flex items-center justify-center gap-1.5 cursor-pointer">
+      <svg class="w-4 h-4 fill-white text-[#9B2D3C]" viewBox="0 0 24 24"><path d="M12.03 2c-5.52 0-10 4.48-10 10 0 1.76.46 3.42 1.27 4.88L2 22l5.27-1.38C8.68 21.39 10.3 22 12.03 22c5.52 0 10-4.48 10-10S17.55 2 12.03 2zm-.03 18c-1.57 0-3.04-.43-4.31-1.18l-.31-.18-3.2.84.85-3.12-.2-.32c-.81-1.29-1.23-2.79-1.23-4.34 0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm4.51-6.19c-.25-.12-1.47-.73-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.66.81-.81.98-.15.17-.3.2-.55.08-.25-.12-1.07-.4-2.03-1.26-.75-.67-1.25-1.51-1.4-1.76-.15-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.13-.15.17-.25.26-.42.09-.17.04-.32-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.5-.41-.43-.56-.44-.15-.01-.32-.01-.48-.01s-.42.06-.64.3c-.22.24-.85.83-.85 2.03s.87 2.35.99 2.51c.12.16 1.72 2.63 4.16 3.68.58.25 1.03.4 1.39.51.58.18 1.11.16 1.53.1.47-.07 1.47-.6 1.67-1.18.2-.58.2-1.08.14-1.18-.06-.1-.23-.16-.48-.28z"/></svg> 
+      WhatsApp Order
+    </a>
+  </div>
+</header>
+
+<!-- Main Container Content Slots -->
+<main class="flex-1 relative">
+
+  <!-- ================== SECTION: HOME ================== -->
+  <section id="section-home" class="tab-view blur-in">
+    
+    <!-- Hero Cover Area -->
+    <div class="pt-8 pb-20 relative bg-gradient-to-b from-[#FAECE8]/50 to-[#FDF9F7] overflow-hidden">
+      <div class="absolute top-20 right-[-100px] w-[350px] h-[350px] rounded-full bg-[#FAECE8]/30 blur-3xl z-0"></div>
+      <div class="absolute bottom-10 left-[-100px] w-[400px] h-[400px] rounded-full bg-[#F7DDD6]/20 blur-3xl z-0"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          <!-- Left Details -->
+          <div class="lg:col-span-6 space-y-8 text-center lg:text-left">
+            <div class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white border border-[#F7DDD6]/55 text-[#9B2D3C] text-xs font-semibold uppercase tracking-wider shadow-sm">
+              <svg class="w-3.5 h-3.5 text-[#DE7281] fill-[#DE7281]" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+              Pretoria&#39;s Loveliest Bakery
+            </div>
+            
+            <h1 class="font-serif text-5xl sm:text-6xl lg:text-[70px] leading-tight font-bold text-[#3D292B] tracking-tight">
+              Freshly Baked <br />
+              <span class="text-gradient bg-gradient-to-r from-[#DE7281] to-[#9B2D3C] bg-clip-text text-transparent font-medium italic">Happiness</span>
+            </h1>
+            
+            <p class="text-[#3D292B]/85 text-lg sm:text-xl font-light max-w-xl mx-auto lg:mx-0 leading-relaxed">
+              Homemade cakes, artisan pastries, cupcakes and custom sweet showstoppers baked daily in Pretoria with love and the finest ingredients.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
+              <button onclick="switchTab('order')" class="bg-[#DE7281] hover:bg-[#9B2D3C] text-white font-display font-semibold px-8 py-4 rounded-full text-base tracking-wide transition-all duration-300 shadow-lg shadow-[#DE7281]/25 cursor-pointer transform hover:-translate-y-0.5 select-none">
+                Order Online
+              </button>
+              <button onclick="document.getElementById('popular-section').scrollIntoView({ behavior: 'smooth' })" class="bg-white border-2 border-[#F7DDD6]/80 hover:bg-[#FAECE8] text-[#3D292B] font-display font-semibold px-8 py-4 rounded-full text-base tracking-wide transition-colors duration-300 shadow-sm cursor-pointer select-none">
+                View Popular Menu
+              </button>
+            </div>
+
+            <!-- Trust Badges -->
+            <div class="flex justify-center lg:justify-start items-center gap-6 pt-4 text-xs font-semibold text-[#3D292B]/70">
+              <span class="flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-[#D3A26A] fill-[#D3A26A]" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                4.9/5 Star Reviews
+              </span>
+              <span class="w-1.5 h-1.5 rounded-full bg-[#F7DDD6]"></span>
+              <span class="flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-[#DE7281]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 21l8.904-4.452L21 9l-2.247-2.247M9.813 15.904L9 21l-4.452-8.904L9 9l2.247 2.247M9.813 15.904l7.196-7.196M9 9L3 3M15 15l6 6"></path></svg>
+                100% Homemade
+              </span>
+            </div>
+
+          </div>
+
+          <!-- Right Cover Cake stand -->
+          <div class="lg:col-span-6 flex justify-center">
+            <div class="relative w-full max-w-lg">
+              <div class="absolute inset-0 bg-[#F7DDD6]/40 rounded-full filter blur-xl opacity-70 transform rotate-12 scale-105"></div>
+              
+              <div class="relative z-10 border-[12px] border-white rounded-[40px] shadow-2xl bg-white overflow-hidden aspect-[4/3] sm:aspect-square flex items-center justify-center">
+                <img 
+                  src="/src/assets/images/sweet_crumbs_hero_cake_1781362930593.jpg" 
+                  alt="Luxury Freshly Baked Strawberry Layer Cake" 
+                  class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+
+              <!-- Overlay floating tag -->
+              <div class="absolute -bottom-6 -right-6 bg-white border border-[#F7DDD6]/50 rounded-2xl p-4 shadow-xl z-20 flex items-center gap-3 animate-pulse">
+                <div class="w-10 h-10 rounded-full bg-[#FAECE8] flex items-center justify-center text-xl">🍰</div>
+                <div>
+                  <h5 class="font-serif font-bold text-xs text-[#3D292B]">Pre-Order Now!</h5>
+                  <p class="text-[10px] text-[#DE7281] font-medium">Pretoria Pickup & Delivery</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Bottom wavy divider -->
+      <div class="absolute bottom-0 left-0 right-0 overflow-hidden leading-none z-10">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-full h-[40px] text-[#FDF9F7] fill-current">
+          <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1130.5,123.6,1055.3,107.1,985.66,92.83Z"></path>
+        </svg>
+      </div>
+
+    </div>
+
+    <!-- Popular Treats Grid -->
+    <div id="popular-section" class="py-20 bg-[#FDF9F7] scroll-mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-xl mx-auto space-y-4 mb-16">
+          <h2 class="font-serif text-4xl font-bold tracking-tight text-[#3D292B]">
+            Our Popular Treats
+          </h2>
+          <p class="text-[#3D292B]/70 text-sm">
+            Baked fresh every morning in small batches to guarantee supreme crumb moisture and ultimate flavor balance. These are Pretoria&#39;s favorite desserts!
+          </p>
+          <div class="w-16 h-[2px] bg-[#DE7281] mx-auto rounded-full mt-3"></div>
+        </div>
+
+        <!-- Predefined dynamic list of 6 quick clicks -->
+        <div class="grid grid-cols-2 lg:grid-cols-6 gap-4 sm:gap-6" id="home-treats-list">
+          <!-- Rendered via JavaScript -->
+        </div>
+
+        <div class="text-center mt-12">
+          <button onclick="switchTab('menu')" class="inline-flex items-center gap-2 bg-[#DE7281] hover:bg-[#9B2D3C] text-white font-display font-semibold py-3.5 px-8 rounded-full text-sm tracking-wide transition-all duration-350 cursor-pointer shadow-md shadow-[#DE7281]/10">
+            View Full Menu
+            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path></svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Highlights & Guarantees section -->
+    <div class="py-20 bg-gradient-to-b from-[#FDF9F7] to-[#FAECE8]/30 border-t border-[#F7DDD6]/20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white/80 p-8 rounded-[32px] border border-[#F7DDD6]/40 hover:border-[#DE7281]/35 hover:bg-white text-center transition-all duration-300">
+            <div class="w-16 h-16 rounded-2xl bg-[#FAECE8] flex items-center justify-center text-3xl mx-auto shadow-sm mb-6">🧁</div>
+            <h3 class="font-serif font-bold text-xl text-[#3D292B] mb-3">Handmade Daily</h3>
+            <p class="text-[#3D292B]/70 text-sm leading-relaxed max-w-xs mx-auto">Baked fresh every single morning, specifically for beautiful morning high teas and local dinner parties.</p>
+          </div>
+
+          <div class="bg-white/80 p-8 rounded-[32px] border border-[#F7DDD6]/40 hover:border-[#DE7281]/35 hover:bg-white text-center transition-all duration-300">
+            <div class="w-16 h-16 rounded-2xl bg-[#FAECE8] flex items-center justify-center text-3xl mx-auto shadow-sm mb-6">🎂</div>
+            <h3 class="font-serif font-bold text-xl text-[#3D292B] mb-3">Bespoke Custom Cakes</h3>
+            <p class="text-[#3D292B]/70 text-sm leading-relaxed max-w-xs mx-auto">Designed beautifully for your unique celebration, wedding anniversary, major event, or theme birthday.</p>
+          </div>
+
+          <div class="bg-white/80 p-8 rounded-[32px] border border-[#F7DDD6]/40 hover:border-[#DE7281]/35 hover:bg-white text-center transition-all duration-300">
+            <div class="w-16 h-16 rounded-2xl bg-[#FAECE8] flex items-center justify-center text-3xl mx-auto shadow-sm mb-6">🍓</div>
+            <h3 class="font-serif font-bold text-xl text-[#3D292B] mb-3">Premium Ingredients</h3>
+            <p class="text-[#3D292B]/70 text-sm leading-relaxed max-w-xs mx-auto">We use only organic farm butter, fresh local strawberries, premium Belgian cocoa, and rich vanilla seeds.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ================== SECTION: MENU ================== -->
+  <section id="section-menu" class="tab-view blur-in hidden py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-xl mx-auto space-y-4 mb-12">
+        <h1 class="font-serif text-4xl sm:text-5xl font-bold tracking-tight text-[#3D292B]">Our Menu</h1>
+        <p class="text-[#3D292B]/70 text-sm max-w-md mx-auto">
+          Discover our signature handmade cakes, cupcakes, pastries and treats. Select items to compile your pre-order basket.
+        </p>
+        <div class="w-16 h-[2px] bg-[#DE7281] mx-auto rounded-full"></div>
+      </div>
+
+      <!-- Controls: Category button bar & Search -->
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-12 bg-white border border-[#F7DDD6]/30 p-4 md:p-6 rounded-[32px] shadow-xs">
+        
+        <div class="flex flex-wrap gap-2 justify-center md:justify-start w-full md:w-auto" id="menu-categories-bar">
+          <button onclick="filterMenuCategory('All')" id="cat-all" class="cat-filter-btn py-2 px-5 font-display text-[13px] font-semibold rounded-full select-none cursor-pointer tracking-wide transition-all duration-300 bg-[#DE7281] text-white shadow-md shadow-[#DE7281]/20">All</button>
+          <button onclick="filterMenuCategory('Cakes')" id="cat-cakes" class="cat-filter-btn py-2 px-5 font-display text-[13px] font-semibold rounded-full select-none cursor-pointer tracking-wide transition-all duration-300 bg-[#FAECE8]/60 hover:bg-[#F7DDD6] text-[#3D292B]">Cakes</button>
+          <button onclick="filterMenuCategory('Cupcakes')" id="cat-cupcakes" class="cat-filter-btn py-2 px-5 font-display text-[13px] font-semibold rounded-full select-none cursor-pointer tracking-wide transition-all duration-300 bg-[#FAECE8]/60 hover:bg-[#F7DDD6] text-[#3D292B]">Cupcakes</button>
+          <button onclick="filterMenuCategory('Pastries')" id="cat-pastries" class="cat-filter-btn py-2 px-5 font-display text-[13px] font-semibold rounded-full select-none cursor-pointer tracking-wide transition-all duration-300 bg-[#FAECE8]/60 hover:bg-[#F7DDD6] text-[#3D292B]">Pastries</button>
+          <button onclick="filterMenuCategory('Cookies')" id="cat-cookies" class="cat-filter-btn py-2 px-5 font-display text-[13px] font-semibold rounded-full select-none cursor-pointer tracking-wide transition-all duration-300 bg-[#FAECE8]/60 hover:bg-[#F7DDD6] text-[#3D292B]">Cookies</button>
+          <button onclick="filterMenuCategory('Special Orders')" id="cat-special" class="cat-filter-btn py-2 px-5 font-display text-[13px] font-semibold rounded-full select-none cursor-pointer tracking-wide transition-all duration-300 bg-[#FAECE8]/60 hover:bg-[#F7DDD6] text-[#3D292B]">Special Orders</button>
+        </div>
+
+        <!-- Search input -->
+        <div class="relative w-full md:w-72">
+          <input 
+            type="text" 
+            id="menu-search-input"
+            oninput="handleMenuSearch(this.value)"
+            placeholder="Search tasty treats..."
+            class="w-full bg-[#FDF9F7] border border-[#F7DDD6]/70 rounded-full py-2.5 pl-10 pr-4 text-xs font-medium focus:outline-hidden focus:ring-2 focus:ring-[#DE7281]/40 text-[#3D292B]"
+          />
+          <svg class="w-4 h-4 text-[#3D292B]/40 absolute left-3.5 top-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        </div>
+
+      </div>
+
+      <!-- Main Dynamic Menu Items Grid -->
+      <div id="menu-items-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Injected by JavaScript -->
+      </div>
+
+      <!-- Custom Cakes promo banner -->
+      <div class="mt-20 bg-white border-2 border-dashed border-[#DE7281]/45 rounded-[40px] p-8 md:p-12 text-center relative overflow-hidden flex flex-col items-center justify-center space-y-6">
+        <div class="absolute top-[-30px] right-[-30px] w-24 h-24 rounded-full bg-[#FAECE8]/50 blur-xl"></div>
+        <div class="absolute bottom-[-30px] left-[-30px] w-24 h-24 rounded-full bg-[#F7DDD6]/30 blur-xl"></div>
+
+        <div class="w-14 h-14 rounded-full bg-[#FAECE8] flex items-center justify-center text-3xl">🎂</div>
+
+        <div class="space-y-2 max-w-xl">
+          <h3 class="font-serif font-bold text-2xl text-[#3D292B]">Can&#39;t find the cake of your dreams?</h3>
+          <p class="text-[#3D292B]/70 text-sm">
+            We specialize in creating bespoke handcrafted layers specifically crafted for birthdays, weddings, baby showers, or corporate milestones.
+          </p>
+        </div>
+
+        <button onclick="switchTab('custom')" class="bg-[#DE7281] hover:bg-[#9B2D3C] text-white font-display font-semibold py-3.5 px-8 rounded-full text-sm tracking-wide transition-colors duration-300 shadow-md shadow-[#DE7281]/25 cursor-pointer">
+          Bespoke Custom Cake Request
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================== SECTION: CUSTOM CAKES ================== -->
+  <section id="section-custom" class="tab-view blur-in hidden py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-xl mx-auto space-y-4 mb-16">
+        <span class="text-[#DE7281] text-xs font-bold uppercase tracking-widest block">Bespoke Decorating</span>
+        <h1 class="font-serif text-4xl sm:text-5xl font-bold tracking-tight text-[#3D292B]">Designed Just For <br><span class="text-[#DE7281] font-medium italic">Your Event</span></h1>
+        <p class="text-[#3D292B]/70 text-sm max-w-md mx-auto leading-relaxed">
+          Every outstanding celebration deserves a jaw-dropping custom edible centerpiece. Pitch Sarah your creative ideas!
+        </p>
+        <div class="w-16 h-[2px] bg-[#DE7281] mx-auto rounded-full mt-3"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- Custom Cake Request form -->
+        <div class="lg:col-span-7 bg-white rounded-[40px] border border-[#F7DDD6]/35 p-8 sm:p-10 shadow-sm relative overflow-hidden">
+          <h2 class="font-serif text-2xl font-bold tracking-tight mb-8 text-[#3D292B] flex items-center gap-2">
+            <svg class="w-6 h-6 text-[#DE7281]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8.25v-1.5m0 1.5c-1.355 0-2.697.056-4.024.166C6.845 8.01 6 8.94 6 9.992V15c0 1.053.845 1.982 1.976 2.076C9.303 17.18 10.645 17.25 12 17.25s2.697-.07 4.024-.182C17.155 16.982 18 16.053 18 15V9.993c0-1.053-.845-1.982-1.976-2.076A32.96 32.96 0 0012 8.25zM12 21.75v-4.5m0-9v-4.5"></path></svg>
+            Custom Cake Request
+          </h2>
+
+          <form id="custom-cake-form" onsubmit="submitCustomCakeForm(event)" class="space-y-6">
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              
+              <div class="space-y-2">
+                <label class="text-xs font-bold uppercase tracking-wider text-[#3D292B]/70 block">Full Name *</label>
+                <input 
+                  type="text" 
+                  id="custom-name"
+                  required 
+                  placeholder="e.g. Rachel Green" 
+                  class="w-full bg-[#FAECE8]/40 border border-[#F7DDD6]/80 rounded-2xl py-3 px-4 text-sm focus:outline-hidden focus:ring-2 focus:ring-[#DE7281]/40 text-[#3D292B]"
+                />
+              </div>
+
+              <div class="space-y-2">
+                <label class="text-xs font-bold uppercase tracking-wider text-[#3D292B]/70 block">Phone Number *</label>
+                <input 
+                  type="tel" 
+                  id="custom-phone"
+                  required 
+                  placeholder="e.g. 082 113 4567" 
+                  class="w-full bg-[#FAECE8]/40 border border-[#F7DDD6]/80 rounded-2xl py-3 px-4 text-sm focus:outline-hidden focus:ring-2 focus:ring-[#DE7281]/40 text-[#3D292B]"
+                />
+              </div>
+
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              
+              <div class="space-y-2">
+                <label class="text-xs font-bold uppercase tracking-wider text-[#3D292B]/70 flex items-center gap-1">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z"></path></svg>
+                  Event Date
+                </label>
+                <input 
+                  type="date" 
+                  id="custom-date"
+                  class="w-full bg-[#FAECE8]/40 border border-[#F7DDD6]/80 rounded-2xl py-3 px-4 text-sm focus:outline-hidden focus:ring-2 focus:ring-[#DE7281]/40 text-[#3D292B] cursor-pointer"
+                />
+              </div>
+
+              <div class="space-y-2">
+                <label class="text-xs font-bold uppercase tracking-wider text-[#3D292B]/70 flex items-center gap-1">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"></path></svg>
+                  Cake Sizing & Tiers
+                </label>
+                <select id="custom-size" class="w-full bg-[#FAECE8]/40 border border-[#F7DDD6]/80 rounded-2xl py-3.5 px-4 text-sm focus:outline-hidden focus:ring-2 focus:ring-[#DE7281]/40 text-[#3D292B] cursor-pointer">
+                  <option value="Single Tier - 6 in (8-10 servings)">Single Tier - 6" (8-10 servings)</option>
+                  <option value="Single Tier - 8 in (15-20 servings)">Single Tier - 8" (15-20 servings)</option>
+                  <option value="Double Tier - 6 + 8 in (30-40 servings)">Double Tier - 6" + 8" (30-40 servings)</option>
+                  <option value="Triple Tier - 6 + 8 + 10 in (60-80 servings)">Triple Tier - 6" + 8" + 10" (60-80 servings)</option>
+                  <option value="Bespoke Creative Novelty Shape">Bespoke Creative Novelty Shape</option>
+                </select>
+              </div>
+
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              
+              <div class="space-y-2">
+                <label class="text-xs font-bold uppercase tracking-wider text-[#3D292B]/70 block">Preferred Flavor</label>
+                <select id="custom-flavor" class="w-full bg-[#FAECE8]/40 border border-[#F7DDD6]/80 rounded-2xl py-3.5 px-4 text-sm focus:outline-hidden focus:ring-2 focus:ring-[#DE7281]/40 text-[#3D292B] cursor-pointer">
+                  <option value="Chocolate Belgium Ganache">Chocolate Belgium Ganache</option>
+                  <option value="Classic Red Velvet & Cream Cheese">Classic Red Velvet & Cream Cheese</option>
+                  <option value="Zesty Citrus Lemon & Curd">Zesty Citrus Lemon & Curd</option>
+                  <option value="Classic Moist Carrot Pecan">Classic Moist Carrot Pecan</option>
+                  <option value="Oreo Cookies & Cream Whip">Oreo Cookies & Cream Whip</option>
+                  <option value="Bespoke Custom Cake Mix (List in details)">Bespoke Custom Cake Mix (List in details)</option>
+                </select>
+              </div>
+
+              <div class="space-y-2">
+                <label class="text-xs font-bold uppercase tracking-wider text-[#3D292B]/70 block">Theme Style / Design</label>
+                <select id="custom-theme" class="w-full bg-[#FAECE8]/40 border border-[#F7DDD6]/80 rounded-2xl py-3.5 px-4 text-sm focus:outline-hidden focus:ring-2 focus:ring-[#DE7281]/40 text-[#3D292B] cursor-pointer">
+                  <option value="Floral & Botanical Elegant">Floral & Botanical Elegant</option>
+                  <option value="Modern Pastel Drips & Macarons">Modern Pastel Drips & Macarons</option>
+                  <option value="Luxury Wedding Chic Minimalist">Luxury Wedding Chic Minimalist</option>
+                  <option value="Whimsical Kids Custom Illustration">Whimsical Kids Custom Illustration</option>
+                  <option value="Naked / Woodsy Country Rustic">Naked / Woodsy Country Rustic</option>
+                  <option value="Other bespoke ideas (Describe below)">Other bespoke ideas (Describe below)</option>
+                </select>
+              </div>
+
+            </div>
+
+            <!-- Custom Drag n drop / upload element -->
+            <div class="space-y-2">
+              <label class="text-xs font-bold uppercase tracking-wider text-[#3D292B]/70 block">Upload Inspiration Reference (Optional)</label>
+              <label class="border-2 border-dashed border-[#F7DDD6] hover:border-[#DE7281] bg-[#FAECE8]/10 hover:bg-[#FAECE8]/30 rounded-2xl p-6 flex flex-col items-center justify-center cursor-pointer transition-all duration-300">
+                <input type="file" id="custom-file-upload" accept="image/*" class="hidden" onchange="handleCakeFileUpload(this)" />
+                <svg class="w-8 h-8 text-[#DE7281] stroke-1 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z"></path></svg>
+                <div class="text-center">
+                  <p id="upload-status" class="text-xs font-semibold text-[#3D292B]">Click to browse files or drag reference images</p>
+                  <p class="text-[10px] text-[#3D292B]/50 mt-0.5">JPG, PNG or PDF style inspiration files</p>
+                </div>
+              </label>
+            </div>
+
+            <div class="space-y-2">
+              <label class="text-xs font-bold uppercase tracking-wider text-[#3D292B]/70 block">Additional Creative Wishes</label>
+              <textarea 
+                id="custom-notes" 
+                rows="4" 
+                placeholder="Tell us about the celebration mood, custom lettering text, visual ideas or structural allergies Sarah should know about..." 
+                class="w-full bg-[#FAECE8]/40 border border-[#F7DDD6]/80 rounded-2xl py-3 px-4 text-sm focus:outline-hidden focus:ring-2 focus:ring-[#DE7281]/40 text-[#3D292B]"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="w-full bg-[#DE7281] hover:bg-[#9B2D3C] text-white font-display font-semibold py-4.5 rounded-full text-base transition-colors duration-300 shadow-lg shadow-[#DE7281]/15 cursor-pointer flex items-center justify-center gap-2">
+              <svg class="w-5 h-5 fill-white text-[#DE7281]" viewBox="0 0 24 24"><path d="M12.03 2c-5.52 0-10 4.48-10 10 0 1.76.46 3.42 1.27 4.88L2 22l5.27-1.38C8.68 21.39 10.3 22 12.03 22c5.52 0 10-4.48 10-10S17.55 2 12.03 2zm-.03 18c-1.57 0-3.04-.43-4.31-1.18l-.31-.18-3.2.84.85-3.12-.2-.32c-.81-1.29-1.23-2.79-1.23-4.34 0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm4.51-6.19c-.25-.12-1.47-.73-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.66.81-.81.98-.15.17-.3.2-.55.08-.25-.12-1.07-.4-2.03-1.26-.75-.67-1.25-1.51-1.4-1.76-.15-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.13-.15.17-.25.26-.42.09-.17.04-.32-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.5-.41-.43-.56-.44-.15-.01-.32-.01-.48-.01s-.42.06-.64.3c-.22.24-.85.83-.85 2.03s.87 2.35.99 2.51c.12.16 1.72 2.63 4.16 3.68.58.25 1.03.4 1.39.51.58.18 1.11.16 1.53.1.47-.07 1.47-.6 1.67-1.18.2-.58.2-1.08.14-1.18-.06-.1-.23-.16-.48-.28z"/></svg>
+              Forward Design Quote via WhatsApp
+            </button>
+
+          </form>
+        </div>
+
+        <!-- Right Column description -->
+        <div class="lg:col-span-5 space-y-8">
+          <div class="border-[12px] border-white rounded-[40px] shadow-lg overflow-hidden bg-white aspect-[4/5] flex items-center justify-center">
+            <img 
+              src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?auto=format&fit=crop&q=80&w=650" 
+              alt="Elegant bespoke floraled bakery art" 
+              class="w-full h-full object-cover"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+
+          <!-- Flow details -->
+          <div class="bg-[#FAECE8]/40 rounded-[32px] border border-[#F7DDD6]/35 p-6 space-y-4">
+            <h4 class="font-serif font-bold text-lg text-[#3D292B]">🍰 Easy Design Process</h4>
+            <ul class="space-y-3.5 text-xs font-semibold leading-relaxed text-[#3D292B]/80">
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#DE7281] font-bold">1.</span>
+                <span>Submit your dates, sizings, cake flavors, and design references inside this form.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#DE7281] font-bold">2.</span>
+                <span>Direct forwarding opens an instant custom WhatsApp channel with Sarah.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#DE7281] font-bold">3.</span>
+                <span>Review deposit prices, pickup times, customized flavors, and delivery options!</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Static Inspiration Gallery -->
+      <div class="mt-24 space-y-12">
+        <div class="text-center space-y-2">
+          <h3 class="font-serif text-3xl font-bold text-[#3D292B]">Inspiration Gallery</h3>
+          <p class="text-[#3D292B]/65 text-sm">A small sample of recent custom gourmet centerpieces baked right in Pretoria.</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6" id="inspiration-images-grid">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================== SECTION: ABOUT US ================== -->
+  <section id="section-about" class="tab-view blur-in hidden py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-24">
+        
+        <!-- Chef Portrait Image frame -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative w-full max-w-sm">
+            <div class="absolute inset-0 bg-[#DE7281]/20 rounded-[40px] filter blur-xl transform translate-x-3 translate-y-3"></div>
+            <div class="relative z-10 border-[10px] border-white rounded-[45px] shadow-xl overflow-hidden aspect-[3/4]">
+              <img 
+                src="/src/assets/images/sarah_baker_1781362965773.jpg" 
+                alt="Chef Sarah Rakhunwana in Sweet Crumbs kitchen" 
+                class="w-full h-full object-cover"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+            
+            <div class="absolute bottom-6 -left-4 bg-white border border-[#F7DDD6]/50 rounded-2xl px-4 py-2 text-center shadow-lg z-20">
+              <p class="font-serif text-sm text-[#9B2D3C] font-semibold italic">Sarah Rakhunwana</p>
+              <p class="text-[9px] text-[#3D292B]/50 uppercase tracking-widest font-bold mt-0.5">Founder &amp; Head Chef</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Narrative bio -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FAECE8] text-[#9B2D3C] text-xs font-semibold uppercase tracking-wider">
+            Handcrafted Masterpieces
+          </div>
+
+          <h1 class="font-serif text-4xl sm:text-5xl font-bold tracking-tight text-[#3D292B]">
+            Hello, I&#39;m <span class="text-[#DE7281] font-serif bg-clip-text text-[#DE7281] italic font-medium">Sarah</span>
+          </h1>
+
+          <p class="text-[#3D292B]/70 text-lg leading-relaxed font-light">
+            The sweet heart and baking engineer behind Sweet Crumbs Bakery. I started baking in my cozy Pretoria kitchen on weekends, driven by a deep love for structural crumb precision, fluffy buttercreams, and the smiles of family tasting warm recipes from scratch.
+          </p>
+
+          <p class="text-[#3D292B]/85 text-sm leading-relaxed">
+            Before it became a brand, baking was my mindfulness practice. Every egg cracked, every sugar rose molded, and every custom texture whipped was an act of quiet love. Today, alongside a tiny team of passionate sweet assistants, we handcraft custom cakes, pristine cupcakes, box cookies, and luxury desserts specifically crafted for Pretoria&#39;s most beautiful memories and daily happy celebrations.
+          </p>
+
+          <!-- Statistics -->
+          <div class="grid grid-cols-2 gap-6 pt-4">
+            <div class="p-4 bg-white rounded-2xl border border-[#F7DDD6]/40">
+              <p class="font-serif text-3xl font-extrabold text-[#DE7281]">5,000+</p>
+              <p class="text-xs font-semibold text-[#3D292B]/60 uppercase tracking-wider mt-1">Cakes Handcrafted</p>
+            </div>
+            <div class="p-4 bg-white rounded-2xl border border-[#F7DDD6]/40">
+              <p class="font-serif text-3xl font-extrabold text-[#DE7281]">100%</p>
+              <p class="text-xs font-semibold text-[#3D292B]/60 uppercase tracking-wider mt-1">Sourced Locally</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Timeline -->
+      <div class="py-16 border-t border-[#F7DDD6]/20 mb-24">
+        <div class="text-center max-w-md mx-auto space-y-3 mb-16">
+          <h2 class="font-serif text-3xl font-bold text-[#3D292B]">Our Journey</h2>
+          <p class="text-[#3D292B]/65 text-sm">How a simple weekend passion project became Pretoria&#39;s most beloved premium cake outlet.</p>
+          <div class="w-12 h-[2px] bg-[#DE7281] mx-auto rounded-full mt-3"></div>
+        </div>
+
+        <div class="relative border-l-2 border-[#F7DDD6]/60 ml-4 md:ml-32 md:mr-32 space-y-12" id="about-timeline-list">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+
+      <!-- Slogans and grid details -->
+      <div class="py-16 border-t border-[#F7DDD6]/20 mb-24">
+        <div class="text-center max-w-md mx-auto space-y-3 mb-16">
+          <h2 class="font-serif text-3xl font-bold text-[#3D292B]">Our Core Values</h2>
+          <p class="text-[#3D292B]/65 text-sm">Our deeply held beliefs are expressed in every crumb we slide onto our oven shelves.</p>
+          <div class="w-12 h-[2px] bg-[#DE7281] mx-auto rounded-full mt-3"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6" id="about-values-grid">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+
+      <!-- Social Showcase Instagram Grid -->
+      <div class="space-y-12">
+        <div class="text-center space-y-3">
+          <h3 class="font-serif text-3xl font-bold text-[#3D292B]">From Our Kitchen</h3>
+          <p class="text-[#3D292B]/65 text-sm">Follow our daily oven stories, recipe updates, and behind-the-scenes designs.</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-6 gap-4" id="instagram-showcase-grid">
+          <!-- Rendered dynamically -->
+        </div>
+
+        <div class="text-center pt-4">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-[#DE7281] hover:bg-[#9B2D3C] text-white font-display font-semibold py-3.5 px-8 rounded-full text-sm tracking-wide shadow-md shadow-[#DE7281]/25 transition-colors">
+            Follow Us @sweetcrumbs
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================== SECTION: ORDER ONLINE ================== -->
+  <section id="section-order" class="tab-view blur-in hidden py-12 text-[#3D292B]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-xl mx-auto space-y-4 mb-16">
+        <span class="text-[#DE7281] text-xs font-bold uppercase tracking-widest block">Instant Platter Pre-Orders</span>
+        <h1 class="font-serif text-4xl sm:text-5xl font-bold tracking-tight text-[#3D292B]">Order <span class="text-[#DE7281] italic font-medium font-serif">Online</span></h1>
+        <p class="text-[#3D292B]/70 text-sm max-w-md mx-auto leading-relaxed">
+          Select standard pastries and boxes, assemble your platter basket, and send your finalized checklist straight to WhatsApp.
+        </p>
+        <div class="w-16 h-[2px] bg-[#DE7281] mx-auto rounded-full mt-3"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- Quick Pre-Order add list (Left box) -->
+        <div class="lg:col-span-6 space-y-8">
+          <div class="bg-white rounded-[32px] border border-[#F7DDD6]/30 p-8 shadow-sm">
+            <h2 class="font-serif text-xl font-bold mb-6 flex items-center gap-2">
+              <svg class="w-5 h-5 text-[#DE7281]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 21l8.904-4.452L21 9l-2.247-2.247M9.813 15.904L9 21l-4.452-8.904L9 9l2.247 2.247M9.813 15.904l7.196-7.196M9 9L3 3M15 15l6 6"></path></svg>
+              Quick Bakery Pre-order Boxes
+            </h2>
+
+            <div class="space-y-4" id="quick-order-boxes-list">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+
+          <!-- General FAQ Notice -->
+          <div class="bg-[#FAECE8]/30 rounded-[32px] border border-[#F7DDD6]/30 p-6 flex gap-4 items-start">
+            <svg class="w-5 h-5 text-[#DE7281] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 111.085 1.086L12.9 14.5a.75.75 0 01-1.085-1.086H12v-2.25zM12 7.5h.008v.008H12V7.5zM21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <div class="space-y-1.5 font-medium text-xs text-[#3D292B]/80 leading-relaxed">
+              <p class="font-bold text-[#3D292B]">Bake Schedule Notice:</p>
+              <p>Standard treat and pastry boxes require at least 24 hours pre-bake warning. Large tailored party cakes require 3-5 days leadtime. If you have an urgent order list or dietary questions, talk directly to Sarah first.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pre-order check box & form receipt (Right box) -->
+        <div class="lg:col-span-6 bg-white rounded-[40px] border border-[#F7DDD6]/30 p-8 sm:p-10 shadow-sm text-[#3D292B]">
+          <h2 class="font-serif text-xl font-bold mb-6 flex items-center gap-2">
+            <svg class="w-5 h-5 text-[#DE7281]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"></path></svg>
+            Your Pre-Order Basket
+          </h2>
+
+          <form id="checkout-receipt-form" onsubmit="processCheckoutForm(event)" class="space-y-6">
+            
+            <!-- Items list -->
+            <div id="checkout-items-wrapper" class="space-y-3.5 max-h-56 overflow-y-auto pr-1">
+              <!-- Generated dynamically in JavaScript -->
+            </div>
+
+            <!-- Price Estimator -->
+            <div id="checkout-pricing-card" class="bg-[#FAECE8]/30 rounded-2xl p-4 border border-[#F7DDD6]/30 space-y-2.5 text-xs font-medium">
+              <div class="flex justify-between">
+                <span class="text-[#3D292B]/60">Items Subtotal:</span>
+                <span class="font-bold" id="checkout-subtotal">R0</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-[#3D292B]/60">Pretoria Delivery Fee:</span>
+                <span id="checkout-delivery-fee">Free (Collection)</span>
+              </div>
+              <div class="h-[1.5px] bg-[#F7DDD6]/60 my-2"></div>
+              <div class="flex justify-between text-sm font-bold text-[#9B2D3C]">
+                <span>Total Estimate Payment:</span>
+                <span id="checkout-grand-total">R0</span>
+              </div>
+            </div>
+
+            <!-- Client Coordinates fields -->
+            <div class="space-y-4" id="checkout-coordinates-fields">
+              <h3 class="font-serif font-bold text-sm text-[#3D292B] border-b border-[#FAECE8] pb-1">Pre-order Coordinates</h3>
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="space-y-1">
+                  <label class="text-[10px] font-bold uppercase tracking-wider text-[#3D292B]/60 block">Contact Name *</label>
+                  <input 
+                    type="text" 
+                    id="checkout-name" 
+                    required 
+                    placeholder="Your Name" 
+                    class="w-full bg-[#FAECE8]/20 border border-[#F7DDD6]/70 rounded-xl py-2 px-3 text-xs focus:outline-hidden focus:ring-1 focus:ring-[#DE7281]/40 text-[#3D292B]"
+                  />
+                </div>
+
+                <div class="space-y-1">
+                  <label class="text-[10px] font-bold uppercase tracking-wider text-[#3D292B]/60 block">Phone Number *</label>
+                  <input 
+                    type="tel" 
+                    id="checkout-phone" 
+                    required 
+                    placeholder="Your Mobile Phone" 
+                    class="w-full bg-[#FAECE8]/20 border border-[#F7DDD6]/70 rounded-xl py-2 px-3 text-xs focus:outline-hidden focus:ring-1 focus:ring-[#DE7281]/40 text-[#3D292B]"
+                  />
+                </div>
+              </div>
+
+              <!-- Distribution strategy -->
+              <div class="space-y-2">
+                <label class="text-[10px] font-bold uppercase tracking-wider text-[#3D292B]/60 block">Fulfillment Strategy</label>
+                <div class="grid grid-cols-2 gap-3">
+                  <button type="button" onclick="setFulfillment('collection')" id="fulfillment-collection-btn" class="border rounded-xl p-3 flex items-center justify-center gap-2 cursor-pointer transition-colors text-xs font-semibold border-[#DE7281] bg-[#FAECE8]/40 text-[#9B2D3C]">
+                    Collect from Pretoria HQ
+                  </button>
+                  <button type="button" onclick="setFulfillment('delivery')" id="fulfillment-delivery-btn" class="border rounded-xl p-3 flex items-center justify-center gap-2 cursor-pointer transition-colors text-xs font-semibold border-[#F7DDD6] bg-transparent text-[#3D292B] hover:bg-[#FAECE8]/15">
+                    Home Delivery (+R50)
+                  </button>
+                </div>
+              </div>
+
+              <!-- Address slot if delivery selected -->
+              <div class="space-y-1 hidden" id="checkout-address-box">
+                <label class="text-[10px] font-bold uppercase tracking-wider text-[#3D292B]/60 block">Pretoria Delivery Address *</label>
+                <input 
+                  type="text" 
+                  id="checkout-address" 
+                  placeholder="Street name, suburb, Pretoria" 
+                  class="w-full bg-[#FAECE8]/20 border border-[#F7DDD6]/70 rounded-xl py-2 px-3 text-xs focus:outline-hidden focus:ring-1 focus:ring-[#DE7281]/40 text-[#3D292B]"
+                />
+              </div>
+
+              <div class="space-y-1">
+                <label class="text-[10px] font-bold uppercase tracking-wider text-[#3D292B]/60 block">Writing requests or Special instructions</label>
+                <textarea 
+                  id="checkout-instructions" 
+                  rows="2" 
+                  placeholder="e.g. Please ice 'Happy Anniversary Emily' on the chocolate cake in red icing cream..." 
+                  class="w-full bg-[#FAECE8]/20 border border-[#F7DDD6]/70 rounded-xl py-2 px-3 text-xs focus:outline-hidden focus:ring-1 focus:ring-[#DE7281]/40 text-[#3D292B]"
+                ></textarea>
+              </div>
+
+              <button type="submit" class="w-full bg-[#DE7281] hover:bg-[#9B2D3C] text-white font-display font-semibold py-4 rounded-full text-sm tracking-wide transition-all duration-300 shadow-md shadow-[#DE7281]/25 flex items-center justify-center gap-2 uppercase">
+                <svg class="w-4.5 h-4.5 fill-white text-[#DE7281]" viewBox="0 0 24 24"><path d="M12.03 2c-5.52 0-10 4.48-10 10 0 1.76.46 3.42 1.27 4.88L2 22l5.27-1.38C8.68 21.39 10.3 22 12.03 22c5.52 0 10-4.48 10-10S17.55 2 12.03 2zm-.03 18c-1.57 0-3.04-.43-4.31-1.18l-.31-.18-3.2.84.85-3.12-.2-.32c-.81-1.29-1.23-2.79-1.23-4.34 0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm4.51-6.19c-.25-.12-1.47-.73-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.66.81-.81.98-.15.17-.3.2-.55.08-.25-.12-1.07-.4-2.03-1.26-.75-.67-1.25-1.51-1.4-1.76-.15-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.13-.15.17-.25.26-.42.09-.17.04-.32-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.5-.41-.43-.56-.44-.15-.01-.32-.01-.48-.01s-.42.06-.64.3c-.22.24-.85.83-.85 2.03s.87 2.35.99 2.51c.12.16 1.72 2.63 4.16 3.68.58.25 1.03.4 1.39.51.58.18 1.11.16 1.53.1.47-.07 1.47-.6 1.67-1.18.2-.58.2-1.08.14-1.18-.06-.1-.23-.16-.48-.28z"/></svg>
+                Send Pre-Order Checklist to WhatsApp
+              </button>
+
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+                <label class="text-xs font-bold uppercase tracking-wider text-[#3D292B]/70 block">Full Name *</label>
+                <input 
+                  type="text" 
+                  id="contact-name" 
+                  required 
+                  placeholder="e.g. Sandra Bullock" 
+                  class="w-full bg-[#FAECE8]/40 border border-[#F7DDD6]/80 rounded-2xl py-3 px-4 text-sm focus:outline-hidden focus:ring-2 focus:ring-[#DE7281]/40 text-[#3D292B]"
+                />
+              </div>
+
+              <div class="space-y-1">
+                <label class="text-xs font-bold uppercase tracking-wider text-[#3D292B]/70 block">Email Address (Optional)</label>
+                <input 
+                  type="email" 
+                  id="contact-email" 
+                  placeholder="e.g. sandra@bul.com" 
+                  class="w-full bg-[#FAECE8]/40 border border-[#F7DDD6]/80 rounded-2xl py-3 px-4 text-sm focus:outline-hidden focus:ring-2 focus:ring-[#DE7281]/40 text-[#3D292B]"
+                />
+              </div>
+
+            </div>
+
+            <div class="space-y-1">
+              <label class="text-xs font-bold uppercase tracking-wider text-[#3D292B]/70 block">Phone Number</label>
+              <input 
+                type="tel" 
+                id="contact-phone" 
+                placeholder="e.g. 082 113 4567" 
+                class="w-full bg-[#FAECE8]/40 border border-[#F7DDD6]/80 rounded-2xl py-3 px-4 text-sm focus:outline-hidden focus:ring-2 focus:ring-[#DE7281]/40 text-[#3D292B]"
+              />
+            </div>
+
+            <div class="space-y-1">
+              <label class="text-xs font-bold uppercase tracking-wider text-[#3D292B]/70 block">Your Message *</label>
+              <textarea 
+                id="contact-message" 
+                required 
+                rows="5" 
+                placeholder="Ask about wedding cakes, pricing quotes, dietary allergies, or tailored order slots..." 
+                class="w-full bg-[#FAECE8]/40 border border-[#F7DDD6]/80 rounded-2xl py-3 px-4 text-sm focus:outline-hidden focus:ring-2 focus:ring-[#DE7281]/40 text-[#3D292B]"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="w-full bg-[#DE7281] hover:bg-[#9B2D3C] text-white font-display font-semibold py-4 rounded-full text-base tracking-wide transition-all duration-300 shadow-md shadow-[#DE7281]/25 flex items-center justify-center gap-2">
+              <svg class="w-4 h-4 text-white fill-current" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+              Send Inquiry Message
+            </button>
+
+          </form>
+        </div>
+
+        <!-- Coordinate values, opening hours, local Pretoria map (Right side) -->
+        <div class="lg:col-span-5 space-y-8">
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <a href="https://wa.me/27821134567" target="_blank" rel="noopener noreferrer" class="bg-white hover:bg-[#FAECE8]/40 border border-[#F7DDD6]/35 p-5 rounded-3xl transition-all duration-300 flex flex-col justify-between group h-32">
+              <div class="w-9 h-9 rounded-xl bg-[#FAECE8] flex items-center justify-center">
+                <svg class="w-5 h-5 text-[#DE7281]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.387a12.035 12.035 0 01-7.108-7.108c-.155-.44.011-.928.387-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"></path></svg>
+              </div>
+              <div>
+                <h4 class="text-[10px] uppercase font-bold text-[#3D292B]/50 tracking-wider">WhatsApp Line</h4>
+                <p class="text-xs font-bold text-[#3D292B] group-hover:text-[#9B2D3C] mt-0.5">082 113 4567</p>
+              </div>
+            </a>
+
+            <a href="mailto:hello@sweetcrumbs.co.za" class="bg-white hover:bg-[#FAECE8]/40 border border-[#F7DDD6]/35 p-5 rounded-3xl transition-all duration-300 flex flex-col justify-between group h-32">
+              <div class="w-9 h-9 rounded-xl bg-[#FAECE8] flex items-center justify-center">
+                <svg class="w-5 h-5 text-[#DE7281]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"></path></svg>
+              </div>
+              <div>
+                <h4 class="text-[10px] uppercase font-bold text-[#3D292B]/50 tracking-wider">Email Address</h4>
+                <p class="text-xs font-bold text-[#3D292B] group-hover:text-[#9B2D3C] mt-0.5">hello@sweetcrumbs.co.za</p>
+              </div>
+            </a>
+          </div>
+
+          <!-- Vector Spot Map -->
+          <div class="bg-white rounded-[40px] border border-[#F7DDD6]/35 p-6 space-y-4 shadow-sm relative overflow-hidden">
+            <h3 class="font-serif font-bold text-base text-[#3D292B] flex items-center gap-1.5 leading-none">
+              📍 Brooklyn Spot, Pretoria
+            </h3>
+
+            <div class="bg-[#FDF9F7] border border-[#F7DDD6]/40 h-36 rounded-2xl relative overflow-hidden flex items-center justify-center">
+              <!-- Abstract roadways -->
+              <div class="absolute top-0 bottom-0 left-12 w-[1.5px] bg-[#F7DDD6]"></div>
+              <div class="absolute top-0 bottom-0 left-28 w-[1.5px] bg-[#F7DDD6]/70"></div>
+              <div class="absolute top-12 left-0 right-0 h-[1.5px] bg-[#F7DDD6]"></div>
+              <div class="absolute top-24 left-0 right-0 h-[1.5px] bg-[#F7DDD6]"></div>
+              <div class="absolute top-1/2 left-0 right-0 h-4 bg-[#FAECE8]/50 transform -rotate-6"></div>
+              <div class="absolute top-0 bottom-0 left-[60%] w-6 bg-[#FAECE8]/60 transform rotate-12"></div>
+
+              <div class="absolute top-4 right-4 w-12 h-10 rounded-xl bg-green-50 justify-center flex items-center">
+                <span class="text-[10px] text-green-600 font-bold font-sans select-none">Park</span>
+              </div>
+
+              <!-- Spark Pin -->
+              <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                <div class="relative">
+                  <div class="absolute -inset-1 bg-[#DE7281]/30 rounded-full animate-ping"></div>
+                  <div class="w-5 h-5 rounded-full bg-[#9B2D3C] flex items-center justify-center shadow-lg border-2 border-white z-10 relative">
+                    <svg class="w-2.5 h-2.5 text-white fill-current" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                  </div>
+                </div>
+                <span class="bg-white border border-[#F7DDD6]/60 rounded-lg px-2.5 py-0.5 text-[9px] font-bold shadow-md text-[#9B2D3C] mt-1 uppercase select-none font-display">Sweet Crumbs</span>
+              </div>
+            </div>
+
+            <div class="text-[10px] font-semibold text-[#3D292B]/50 text-center uppercase tracking-wide">
+              Brooklyn, Pretoria Central, South Africa
+            </div>
+          </div>
+
+          <!-- Hours Card -->
+          <div class="bg-[#FAECE8]/40 rounded-[35px] border border-[#F7DDD6]/35 p-6 space-y-4">
+            <h3 class="font-serif font-bold text-base text-[#3D292B] flex items-center gap-2">
+              <svg class="w-4.5 h-4.5 text-[#DE7281]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              Cooking Hours
+            </h3>
+
+            <div class="space-y-2.5 font-medium text-sm">
+              <div class="flex justify-between border-b border-[#F7DDD6]/30 pb-2">
+                <span class="text-[#3D292B]/70 font-semibold">Monday - Friday</span>
+                <span class="text-[#3D292B] font-bold">9:00 AM - 5:00 PM</span>
+              </div>
+              <div class="flex justify-between border-b border-[#F7DDD6]/30 pb-2">
+                <span class="text-[#3D292B]/70 font-semibold">Saturday</span>
+                <span class="text-[#3D292B] font-bold">9:00 AM - 2:00 PM</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-[#3D292B]/70 font-semibold">Sunday</span>
+                <span class="text-[#9B2D3C] font-extrabold uppercase tracking-wide">Closed</span>
+              </div>
+            </div>
+
+            <p class="text-[10px] text-[#3D292B]/50 font-bold text-center italic mt-2 uppercase tracking-wide">
+              Thank you for supporting my small local business! ❤️
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- Floating Global Helper WhatsApp Button -->
+<a href="https://wa.me/27821134567" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 left-6 z-40 bg-[#25D366] hover:bg-[#128C7E] text-white p-3.5 rounded-full shadow-2xl hover:scale-105 transition-all duration-300 flex items-center gap-2 group cursor-pointer" title="Chat with Sarah Rakhunwana">
+  <svg class="w-6 h-6 fill-white" viewBox="0 0 24 24"><path d="M12.03 2c-5.52 0-10 4.48-10 10 0 1.76.46 3.42 1.27 4.88L2 22l5.27-1.38C8.68 21.39 10.3 22 12.03 22c5.52 0 10-4.48 10-10S17.55 2 12.03 2zm-.03 18c-1.57 0-3.04-.43-4.31-1.18l-.31-.18-3.2.84.85-3.12-.2-.32c-.81-1.29-1.23-2.79-1.23-4.34 0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm4.51-6.19c-.25-.12-1.47-.73-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.66.81-.81.98-.15.17-.3.2-.55.08-.25-.12-1.07-.4-2.03-1.26-.75-.67-1.25-1.51-1.4-1.76-.15-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.13-.15.17-.25.26-.42.09-.17.04-.32-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.5-.41-.43-.56-.44-.15-.01-.32-.01-.48-.01s-.42.06-.64.3c-.22.24-.85.83-.85 2.03s.87 2.35.99 2.51c.12.16 1.72 2.63 4.16 3.68.58.25 1.03.4 1.39.51.58.18 1.11.16 1.53.1.47-.07 1.47-.6 1.67-1.18.2-.58.2-1.08.14-1.18-.06-.1-.23-.16-.48-.28z"/></svg> 
+  <span class="font-display text-xs font-bold uppercase tracking-wider max-w-0 group-hover:max-w-xs overflow-hidden transition-all duration-500 ease-in-out whitespace-nowrap pr-0 group-hover:pr-1 select-none">
+    WhatsApp Kitchen
+  </span>
+</a>
+
+<!-- Footer Area -->
+<footer class="bg-[#3D292B] text-[#FDF9F7] border-t border-white/10 pt-16 pb-12 transition-colors duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-white/10">
+      
+      <!-- Column: Brand Slogan -->
+      <div class="md:col-span-4 space-y-5">
+        <div class="flex items-center gap-2 cursor-pointer group" onclick="switchTab('home')">
+          <div class="w-12 h-12 rounded-full overflow-hidden border border-[#DE7281]/40 bg-[#FAECE8] flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+            <img 
+              src="/src/assets/images/sweet_crumbs_logo_1781362950306.jpg" 
+              alt="Sweet Crumbs Logo" 
+              class="w-full h-full object-cover"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+          <div class="flex flex-col">
+            <span class="font-serif text-xl tracking-wide font-semibold text-white select-none">Sweet Crumbs</span>
+            <span class="text-[10px] uppercase tracking-widest text-[#DE7281] font-medium mt-[-2px] select-none">Homemade with Love</span>
+          </div>
+        </div>
+
+        <p class="text-[#FDF9F7]/70 text-xs leading-relaxed max-w-sm">
+          Artisanal cakes, cupcakes, cookies, and pastries handcrafted in Pretoria, South Africa with organic butter, local sweet strawberries, and the finest Belgian cocoa.
+        </p>
+
+        <div class="flex items-center gap-3">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white/10 hover:bg-[#DE7280] flex items-center justify-center text-[#FDF9F7] transition-colors" title="Instagram Logo">
+            <svg class="w-4 h-4 fill-none stroke-current" stroke-width="2" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zM17.5 6.5h.01"></path></svg>
+          </a>
+          <a href="mailto:hello@sweetcrumbs.co.za" class="w-8 h-8 rounded-full bg-white/10 hover:bg-[#DE7280] flex items-center justify-center text-[#FDF9F7] transition-colors" title="Mail Logo">
+            <svg class="w-4 h-4 fill-none stroke-current" stroke-width="2" viewBox="0 0 24 24"><path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"></path></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Column: Links -->
+      <div class="md:col-span-3 space-y-4">
+        <h4 class="font-serif text-sm font-bold uppercase tracking-wider text-white">Boutique Directory</h4>
+        <ul class="space-y-2.5 text-xs">
+          <li><button onclick="switchTab('home')" class="text-[#FDF9F7]/70 hover:text-[#DE7281] cursor-pointer text-left">Home Kitchen Hub </button></li>
+          <li><button onclick="switchTab('menu')" class="text-[#FDF9F7]/70 hover:text-[#DE7281] cursor-pointer text-left">Our Premium Menu</button></li>
+          <li><button onclick="switchTab('custom')" class="text-[#FDF9F7]/70 hover:text-[#DE7281] cursor-pointer text-left">Custom Cake Planner</button></li>
+          <li><button onclick="switchTab('about')" class="text-[#FDF9F7]/70 hover:text-[#DE7281] cursor-pointer text-left">Meet Chef Sarah</button></li>
+          <li><button onclick="switchTab('order')" class="text-[#FDF9F7]/70 hover:text-[#DE7281] cursor-pointer text-left">Order Basket</button></li>
+          <li><button onclick="switchTab('contact')" class="text-[#FDF9F7]/70 hover:text-[#DE7281] cursor-pointer text-left">Get In Touch</button></li>
+        </ul>
+      </div>
+
+      <!-- Column: Coordinates -->
+      <div class="md:col-span-2 space-y-4">
+        <h4 class="font-serif text-sm font-bold uppercase tracking-wider text-white">Contact Line</h4>
+        <ul class="space-y-3 text-xs text-[#FDF9F7]/70">
+          <li>Brooklyn, Pretoria <br>South Africa</li>
+          <li>WhatsApp:<br><span class="font-bold text-white">082 113 4567</span></li>
+          <li>hello@sweetcrumbs.co.za</li>
+        </ul>
+      </div>
+
+      <!-- Column: Hour summaries -->
+      <div class="md:col-span-3 space-y-4">
+        <h4 class="font-serif text-sm font-bold uppercase tracking-wider text-white">Kitchen Hours</h4>
+        <div class="space-y-2.5 text-xs text-[#FDF9F7]/70">
+          <div class="flex justify-between border-b border-white/10 pb-1.5">
+            <span>Mon - Fri</span>
+            <span class="font-semibold text-white">9:00 AM - 5:00 PM</span>
+          </div>
+          <div class="flex justify-between border-b border-white/10 pb-1.5">
+            <span>Saturday</span>
+            <span class="font-semibold text-white">9:00 AM - 2:00 PM</span>
+          </div>
+          <div class="flex justify-between">
+            <span>Sunday</span>
+            <span class="text-[#DE7281] font-bold">Closed</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] text-[#FDF9F7]/40">
+      <p>© <span id="footer-year">2026</span> Sweet Crumbs Bakery. All sweet rights reserved.</p>
+      <p class="flex items-center gap-1">
+        Handcrafted with <svg class="w-3.5 h-3.5 text-[#DE7281] fill-[#DE7281]" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> in Pretoria.
+      </p>
+    </div>
+
+  </div>
+</footer>
+
+<!-- Vanilla Javascript module linking script -->
+<script type="module" src="/src/main.ts"></script>
+
+  </body>
+</html>
