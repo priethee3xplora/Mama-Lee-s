@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Sweet Crumbs — Homemade with Love</title><link rel="stylesheet" href="/src/style.css" /></head>
+<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Custom Cakes — Sweet Crumbs</title><link rel="stylesheet" href="/src/style.css" /></head>
 <body class="bg-[#FDF9F7] text-[#3D292B] font-sans antialiased overflow-x-hidden selection:bg-[#DE7281] selection:text-white">
 <header class="sticky top-0 z-40 bg-[#FDF9F7]/90 backdrop-blur-md border-b border-[#F7DDD6]/50 transition-all duration-350">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -128,151 +128,192 @@
   </div>
 </header>
 <main class="flex-1 relative">
-  <!-- ================== SECTION: HOME ================== -->
-  <section id="section-home" class="tab-view blur-in">
-    
-    <!-- Hero Cover Area -->
-    <div class="pt-8 pb-20 relative bg-gradient-to-b from-[#FAECE8]/50 to-[#FDF9F7] overflow-hidden">
-      <div class="absolute top-20 right-[-100px] w-[350px] h-[350px] rounded-full bg-[#FAECE8]/30 blur-3xl z-0"></div>
-      <div class="absolute bottom-10 left-[-100px] w-[400px] h-[400px] rounded-full bg-[#F7DDD6]/20 blur-3xl z-0"></div>
+  <!-- ================== SECTION: CUSTOM CAKES ================== -->
+  <section id="section-custom" class="tab-view blur-in py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-xl mx-auto space-y-4 mb-16">
+        <span class="text-[#DE7281] text-xs font-bold uppercase tracking-widest block">Bespoke Decorating</span>
+        <h1 class="font-serif text-4xl sm:text-5xl font-bold tracking-tight text-[#3D292B]">Designed Just For <br><span class="text-[#DE7281] font-medium italic">Your Event</span></h1>
+        <p class="text-[#3D292B]/70 text-sm max-w-md mx-auto leading-relaxed">
+          Every outstanding celebration deserves a jaw-dropping custom edible centerpiece. Pitch Sarah your creative ideas!
+        </p>
+        <div class="w-16 h-[2px] bg-[#DE7281] mx-auto rounded-full mt-3"></div>
+      </div>
 
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          
-          <!-- Left Details -->
-          <div class="lg:col-span-6 space-y-8 text-center lg:text-left">
-            <div class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white border border-[#F7DDD6]/55 text-[#9B2D3C] text-xs font-semibold uppercase tracking-wider shadow-sm">
-              <svg class="w-3.5 h-3.5 text-[#DE7281] fill-[#DE7281]" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-              Pretoria&#39;s Loveliest Bakery
-            </div>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- Custom Cake Request form -->
+        <div class="lg:col-span-7 bg-white rounded-[40px] border border-[#F7DDD6]/35 p-8 sm:p-10 shadow-sm relative overflow-hidden">
+          <h2 class="font-serif text-2xl font-bold tracking-tight mb-8 text-[#3D292B] flex items-center gap-2">
+            <svg class="w-6 h-6 text-[#DE7281]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8.25v-1.5m0 1.5c-1.355 0-2.697.056-4.024.166C6.845 8.01 6 8.94 6 9.992V15c0 1.053.845 1.982 1.976 2.076C9.303 17.18 10.645 17.25 12 17.25s2.697-.07 4.024-.182C17.155 16.982 18 16.053 18 15V9.993c0-1.053-.845-1.982-1.976-2.076A32.96 32.96 0 0012 8.25zM12 21.75v-4.5m0-9v-4.5"></path></svg>
+            Custom Cake Request
+          </h2>
+
+          <form id="custom-cake-form" onsubmit="submitCustomCakeForm(event)" class="space-y-6">
             
-            <h1 class="font-serif text-5xl sm:text-6xl lg:text-[70px] leading-tight font-bold text-[#3D292B] tracking-tight">
-              Freshly Baked <br />
-              <span class="text-gradient bg-gradient-to-r from-[#DE7281] to-[#9B2D3C] bg-clip-text text-transparent font-medium italic">Happiness</span>
-            </h1>
-            
-            <p class="text-[#3D292B]/85 text-lg sm:text-xl font-light max-w-xl mx-auto lg:mx-0 leading-relaxed">
-              Homemade cakes, artisan pastries, cupcakes and custom sweet showstoppers baked daily in Pretoria with love and the finest ingredients.
-            </p>
-
-            <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
-              <a href="/order.html" class="bg-[#DE7281] hover:bg-[#9B2D3C] text-white font-display font-semibold px-8 py-4 rounded-full text-base tracking-wide transition-all duration-300 shadow-lg shadow-[#DE7281]/25 cursor-pointer transform hover:-translate-y-0.5 select-none">
-                Order Online
-              </a>
-              <button onclick="document.getElementById('popular-section').scrollIntoView({ behavior: 'smooth' })" class="bg-white border-2 border-[#F7DDD6]/80 hover:bg-[#FAECE8] text-[#3D292B] font-display font-semibold px-8 py-4 rounded-full text-base tracking-wide transition-colors duration-300 shadow-sm cursor-pointer select-none">
-                View Popular Menu
-              </button>
-            </div>
-
-            <!-- Trust Badges -->
-            <div class="flex justify-center lg:justify-start items-center gap-6 pt-4 text-xs font-semibold text-[#3D292B]/70">
-              <span class="flex items-center gap-1.5">
-                <svg class="w-4 h-4 text-[#D3A26A] fill-[#D3A26A]" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                4.9/5 Star Reviews
-              </span>
-              <span class="w-1.5 h-1.5 rounded-full bg-[#F7DDD6]"></span>
-              <span class="flex items-center gap-1.5">
-                <svg class="w-4 h-4 text-[#DE7281]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 21l8.904-4.452L21 9l-2.247-2.247M9.813 15.904L9 21l-4.452-8.904L9 9l2.247 2.247M9.813 15.904l7.196-7.196M9 9L3 3M15 15l6 6"></path></svg>
-                100% Homemade
-              </span>
-            </div>
-
-          </div>
-
-          <!-- Right Cover Cake stand -->
-          <div class="lg:col-span-6 flex justify-center">
-            <div class="relative w-full max-w-lg">
-              <div class="absolute inset-0 bg-[#F7DDD6]/40 rounded-full filter blur-xl opacity-70 transform rotate-12 scale-105"></div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
               
-              <div class="relative z-10 border-[12px] border-white rounded-[40px] shadow-2xl bg-white overflow-hidden aspect-[4/3] sm:aspect-square flex items-center justify-center">
-                <img 
-                  src="/src/assets/images/sweet_crumbs_hero_cake_1781362930593.jpg" 
-                  alt="Luxury Freshly Baked Strawberry Layer Cake" 
-                  class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                  referrerPolicy="no-referrer"
+              <div class="space-y-2">
+                <label class="text-xs font-bold uppercase tracking-wider text-[#3D292B]/70 block">Full Name *</label>
+                <input 
+                  type="text" 
+                  id="custom-name"
+                  required 
+                  placeholder="e.g. Rachel Green" 
+                  class="w-full bg-[#FAECE8]/40 border border-[#F7DDD6]/80 rounded-2xl py-3 px-4 text-sm focus:outline-hidden focus:ring-2 focus:ring-[#DE7281]/40 text-[#3D292B]"
                 />
               </div>
 
-              <!-- Overlay floating tag -->
-              <div class="absolute -bottom-6 -right-6 bg-white border border-[#F7DDD6]/50 rounded-2xl p-4 shadow-xl z-20 flex items-center gap-3 animate-pulse">
-                <div class="w-10 h-10 rounded-full bg-[#FAECE8] flex items-center justify-center text-xl">🍰</div>
-                <div>
-                  <h5 class="font-serif font-bold text-xs text-[#3D292B]">Pre-Order Now!</h5>
-                  <p class="text-[10px] text-[#DE7281] font-medium">Pretoria Pickup & Delivery</p>
-                </div>
+              <div class="space-y-2">
+                <label class="text-xs font-bold uppercase tracking-wider text-[#3D292B]/70 block">Phone Number *</label>
+                <input 
+                  type="tel" 
+                  id="custom-phone"
+                  required 
+                  placeholder="e.g. 082 113 4567" 
+                  class="w-full bg-[#FAECE8]/40 border border-[#F7DDD6]/80 rounded-2xl py-3 px-4 text-sm focus:outline-hidden focus:ring-2 focus:ring-[#DE7281]/40 text-[#3D292B]"
+                />
               </div>
 
             </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              
+              <div class="space-y-2">
+                <label class="text-xs font-bold uppercase tracking-wider text-[#3D292B]/70 flex items-center gap-1">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z"></path></svg>
+                  Event Date
+                </label>
+                <input 
+                  type="date" 
+                  id="custom-date"
+                  class="w-full bg-[#FAECE8]/40 border border-[#F7DDD6]/80 rounded-2xl py-3 px-4 text-sm focus:outline-hidden focus:ring-2 focus:ring-[#DE7281]/40 text-[#3D292B] cursor-pointer"
+                />
+              </div>
+
+              <div class="space-y-2">
+                <label class="text-xs font-bold uppercase tracking-wider text-[#3D292B]/70 flex items-center gap-1">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"></path></svg>
+                  Cake Sizing & Tiers
+                </label>
+                <select id="custom-size" class="w-full bg-[#FAECE8]/40 border border-[#F7DDD6]/80 rounded-2xl py-3.5 px-4 text-sm focus:outline-hidden focus:ring-2 focus:ring-[#DE7281]/40 text-[#3D292B] cursor-pointer">
+                  <option value="Single Tier - 6 in (8-10 servings)">Single Tier - 6" (8-10 servings)</option>
+                  <option value="Single Tier - 8 in (15-20 servings)">Single Tier - 8" (15-20 servings)</option>
+                  <option value="Double Tier - 6 + 8 in (30-40 servings)">Double Tier - 6" + 8" (30-40 servings)</option>
+                  <option value="Triple Tier - 6 + 8 + 10 in (60-80 servings)">Triple Tier - 6" + 8" + 10" (60-80 servings)</option>
+                  <option value="Bespoke Creative Novelty Shape">Bespoke Creative Novelty Shape</option>
+                </select>
+              </div>
+
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              
+              <div class="space-y-2">
+                <label class="text-xs font-bold uppercase tracking-wider text-[#3D292B]/70 block">Preferred Flavor</label>
+                <select id="custom-flavor" class="w-full bg-[#FAECE8]/40 border border-[#F7DDD6]/80 rounded-2xl py-3.5 px-4 text-sm focus:outline-hidden focus:ring-2 focus:ring-[#DE7281]/40 text-[#3D292B] cursor-pointer">
+                  <option value="Chocolate Belgium Ganache">Chocolate Belgium Ganache</option>
+                  <option value="Classic Red Velvet & Cream Cheese">Classic Red Velvet & Cream Cheese</option>
+                  <option value="Zesty Citrus Lemon & Curd">Zesty Citrus Lemon & Curd</option>
+                  <option value="Classic Moist Carrot Pecan">Classic Moist Carrot Pecan</option>
+                  <option value="Oreo Cookies & Cream Whip">Oreo Cookies & Cream Whip</option>
+                  <option value="Bespoke Custom Cake Mix (List in details)">Bespoke Custom Cake Mix (List in details)</option>
+                </select>
+              </div>
+
+              <div class="space-y-2">
+                <label class="text-xs font-bold uppercase tracking-wider text-[#3D292B]/70 block">Theme Style / Design</label>
+                <select id="custom-theme" class="w-full bg-[#FAECE8]/40 border border-[#F7DDD6]/80 rounded-2xl py-3.5 px-4 text-sm focus:outline-hidden focus:ring-2 focus:ring-[#DE7281]/40 text-[#3D292B] cursor-pointer">
+                  <option value="Floral & Botanical Elegant">Floral & Botanical Elegant</option>
+                  <option value="Modern Pastel Drips & Macarons">Modern Pastel Drips & Macarons</option>
+                  <option value="Luxury Wedding Chic Minimalist">Luxury Wedding Chic Minimalist</option>
+                  <option value="Whimsical Kids Custom Illustration">Whimsical Kids Custom Illustration</option>
+                  <option value="Naked / Woodsy Country Rustic">Naked / Woodsy Country Rustic</option>
+                  <option value="Other bespoke ideas (Describe below)">Other bespoke ideas (Describe below)</option>
+                </select>
+              </div>
+
+            </div>
+
+            <!-- Custom Drag n drop / upload element -->
+            <div class="space-y-2">
+              <label class="text-xs font-bold uppercase tracking-wider text-[#3D292B]/70 block">Upload Inspiration Reference (Optional)</label>
+              <label class="border-2 border-dashed border-[#F7DDD6] hover:border-[#DE7281] bg-[#FAECE8]/10 hover:bg-[#FAECE8]/30 rounded-2xl p-6 flex flex-col items-center justify-center cursor-pointer transition-all duration-300">
+                <input type="file" id="custom-file-upload" accept="image/*" class="hidden" onchange="handleCakeFileUpload(this)" />
+                <svg class="w-8 h-8 text-[#DE7281] stroke-1 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z"></path></svg>
+                <div class="text-center">
+                  <p id="upload-status" class="text-xs font-semibold text-[#3D292B]">Click to browse files or drag reference images</p>
+                  <p class="text-[10px] text-[#3D292B]/50 mt-0.5">JPG, PNG or PDF style inspiration files</p>
+                </div>
+              </label>
+            </div>
+
+            <div class="space-y-2">
+              <label class="text-xs font-bold uppercase tracking-wider text-[#3D292B]/70 block">Additional Creative Wishes</label>
+              <textarea 
+                id="custom-notes" 
+                rows="4" 
+                placeholder="Tell us about the celebration mood, custom lettering text, visual ideas or structural allergies Sarah should know about..." 
+                class="w-full bg-[#FAECE8]/40 border border-[#F7DDD6]/80 rounded-2xl py-3 px-4 text-sm focus:outline-hidden focus:ring-2 focus:ring-[#DE7281]/40 text-[#3D292B]"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="w-full bg-[#DE7281] hover:bg-[#9B2D3C] text-white font-display font-semibold py-4.5 rounded-full text-base transition-colors duration-300 shadow-lg shadow-[#DE7281]/15 cursor-pointer flex items-center justify-center gap-2">
+              <svg class="w-5 h-5 fill-white text-[#DE7281]" viewBox="0 0 24 24"><path d="M12.03 2c-5.52 0-10 4.48-10 10 0 1.76.46 3.42 1.27 4.88L2 22l5.27-1.38C8.68 21.39 10.3 22 12.03 22c5.52 0 10-4.48 10-10S17.55 2 12.03 2zm-.03 18c-1.57 0-3.04-.43-4.31-1.18l-.31-.18-3.2.84.85-3.12-.2-.32c-.81-1.29-1.23-2.79-1.23-4.34 0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm4.51-6.19c-.25-.12-1.47-.73-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.66.81-.81.98-.15.17-.3.2-.55.08-.25-.12-1.07-.4-2.03-1.26-.75-.67-1.25-1.51-1.4-1.76-.15-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.13-.15.17-.25.26-.42.09-.17.04-.32-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.5-.41-.43-.56-.44-.15-.01-.32-.01-.48-.01s-.42.06-.64.3c-.22.24-.85.83-.85 2.03s.87 2.35.99 2.51c.12.16 1.72 2.63 4.16 3.68.58.25 1.03.4 1.39.51.58.18 1.11.16 1.53.1.47-.07 1.47-.6 1.67-1.18.2-.58.2-1.08.14-1.18-.06-.1-.23-.16-.48-.28z"/></svg>
+              Forward Design Quote via WhatsApp
+            </button>
+
+          </form>
+        </div>
+
+        <!-- Right Column description -->
+        <div class="lg:col-span-5 space-y-8">
+          <div class="border-[12px] border-white rounded-[40px] shadow-lg overflow-hidden bg-white aspect-[4/5] flex items-center justify-center">
+            <img 
+              src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?auto=format&fit=crop&q=80&w=650" 
+              alt="Elegant bespoke floraled bakery art" 
+              class="w-full h-full object-cover"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+
+          <!-- Flow details -->
+          <div class="bg-[#FAECE8]/40 rounded-[32px] border border-[#F7DDD6]/35 p-6 space-y-4">
+            <h4 class="font-serif font-bold text-lg text-[#3D292B]">🍰 Easy Design Process</h4>
+            <ul class="space-y-3.5 text-xs font-semibold leading-relaxed text-[#3D292B]/80">
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#DE7281] font-bold">1.</span>
+                <span>Submit your dates, sizings, cake flavors, and design references inside this form.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#DE7281] font-bold">2.</span>
+                <span>Direct forwarding opens an instant custom WhatsApp channel with Sarah.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#DE7281] font-bold">3.</span>
+                <span>Review deposit prices, pickup times, customized flavors, and delivery options!</span>
+              </li>
+            </ul>
           </div>
 
         </div>
+
       </div>
 
-      <!-- Bottom wavy divider -->
-      <div class="absolute bottom-0 left-0 right-0 overflow-hidden leading-none z-10">
-        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-full h-[40px] text-[#FDF9F7] fill-current">
-          <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1130.5,123.6,1055.3,107.1,985.66,92.83Z"></path>
-        </svg>
+      <!-- Static Inspiration Gallery -->
+      <div class="mt-24 space-y-12">
+        <div class="text-center space-y-2">
+          <h3 class="font-serif text-3xl font-bold text-[#3D292B]">Inspiration Gallery</h3>
+          <p class="text-[#3D292B]/65 text-sm">A small sample of recent custom gourmet centerpieces baked right in Pretoria.</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6" id="inspiration-images-grid">
+          <!-- Rendered dynamically -->
+        </div>
       </div>
 
     </div>
-
-    <!-- Popular Treats Grid -->
-    <div id="popular-section" class="py-20 bg-[#FDF9F7] scroll-mt-20">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="text-center max-w-xl mx-auto space-y-4 mb-16">
-          <h2 class="font-serif text-4xl font-bold tracking-tight text-[#3D292B]">
-            Our Popular Treats
-          </h2>
-          <p class="text-[#3D292B]/70 text-sm">
-            Baked fresh every morning in small batches to guarantee supreme crumb moisture and ultimate flavor balance. These are Pretoria&#39;s favorite desserts!
-          </p>
-          <div class="w-16 h-[2px] bg-[#DE7281] mx-auto rounded-full mt-3"></div>
-        </div>
-
-        <!-- Predefined dynamic list of 6 quick clicks -->
-        <div class="grid grid-cols-2 lg:grid-cols-6 gap-4 sm:gap-6" id="home-treats-list">
-          <!-- Rendered via JavaScript -->
-        </div>
-
-        <div class="text-center mt-12">
-          <a href="/menu.html" class="inline-flex items-center gap-2 bg-[#DE7281] hover:bg-[#9B2D3C] text-white font-display font-semibold py-3.5 px-8 rounded-full text-sm tracking-wide transition-all duration-350 cursor-pointer shadow-md shadow-[#DE7281]/10">
-            View Full Menu
-            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path></svg>
-          </a>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Highlights & Guarantees section -->
-    <div class="py-20 bg-gradient-to-b from-[#FDF9F7] to-[#FAECE8]/30 border-t border-[#F7DDD6]/20">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="bg-white/80 p-8 rounded-[32px] border border-[#F7DDD6]/40 hover:border-[#DE7281]/35 hover:bg-white text-center transition-all duration-300">
-            <div class="w-16 h-16 rounded-2xl bg-[#FAECE8] flex items-center justify-center text-3xl mx-auto shadow-sm mb-6">🧁</div>
-            <h3 class="font-serif font-bold text-xl text-[#3D292B] mb-3">Handmade Daily</h3>
-            <p class="text-[#3D292B]/70 text-sm leading-relaxed max-w-xs mx-auto">Baked fresh every single morning, specifically for beautiful morning high teas and local dinner parties.</p>
-          </div>
-
-          <div class="bg-white/80 p-8 rounded-[32px] border border-[#F7DDD6]/40 hover:border-[#DE7281]/35 hover:bg-white text-center transition-all duration-300">
-            <div class="w-16 h-16 rounded-2xl bg-[#FAECE8] flex items-center justify-center text-3xl mx-auto shadow-sm mb-6">🎂</div>
-            <h3 class="font-serif font-bold text-xl text-[#3D292B] mb-3">Bespoke Custom Cakes</h3>
-            <p class="text-[#3D292B]/70 text-sm leading-relaxed max-w-xs mx-auto">Designed beautifully for your unique celebration, wedding anniversary, major event, or theme birthday.</p>
-          </div>
-
-          <div class="bg-white/80 p-8 rounded-[32px] border border-[#F7DDD6]/40 hover:border-[#DE7281]/35 hover:bg-white text-center transition-all duration-300">
-            <div class="w-16 h-16 rounded-2xl bg-[#FAECE8] flex items-center justify-center text-3xl mx-auto shadow-sm mb-6">🍓</div>
-            <h3 class="font-serif font-bold text-xl text-[#3D292B] mb-3">Premium Ingredients</h3>
-            <p class="text-[#3D292B]/70 text-sm leading-relaxed max-w-xs mx-auto">We use only organic farm butter, fresh local strawberries, premium Belgian cocoa, and rich vanilla seeds.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
   </section>
 
 </main>
