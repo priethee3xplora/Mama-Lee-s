@@ -1,7 +1,29 @@
+const menuButton = document.querySelector(".mobile");
+const navLinks = document.querySelector(".links");
 
-const WHATSAPP="27000000000";
-function wa(text){window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`,"_blank")}
-document.querySelectorAll("[data-order]").forEach(b=>b.addEventListener("click",()=>wa(`Hello Liivhuu's Baking Adventure!\n\nI'd like to order: ${b.dataset.order}\n\nPlease confirm availability and price.`)));
-const form=document.querySelector("#cakeForm");
-if(form) form.addEventListener("submit",e=>{e.preventDefault();const d=new FormData(form);wa(`Hello Liivhuu's Baking Adventure!\n\nI'd like a custom cake quote.\n\nName: ${d.get("name")}\nDate: ${d.get("date")}\nCake size: ${d.get("size")}\nFlavour: ${d.get("flavour")}\nTheme: ${d.get("theme")}\nNotes: ${d.get("notes")}`)});
-document.querySelector(".mobile")?.addEventListener("click",()=>document.querySelector(".links").classList.toggle("open"));
+if (menuButton && navLinks) {
+    menuButton.addEventListener("click", () => {
+        const isOpen = navLinks.classList.toggle("open");
+
+        menuButton.setAttribute(
+            "aria-label",
+            isOpen ? "Close navigation menu" : "Open navigation menu"
+        );
+    });
+
+    // Close menu when a navigation link is clicked
+    navLinks.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+            navLinks.classList.remove("open");
+            menuButton.setAttribute("aria-label", "Open navigation menu");
+        });
+    });
+}
+
+function order(name) {
+    const msg = encodeURIComponent(
+        `Hello Liivhuu's Baking Adventure! I'd like to order: ${name}`
+    );
+
+    location.href = "https://wa.me/27000000000?text=" + msg;
+}
