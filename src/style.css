@@ -1,6 +1,0 @@
-@import "tailwindcss";
-
-html { scroll-behavior: smooth; }
-body { min-height: 100vh; }
-.blur-in { animation: fadeIn 0.35s ease both; }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }

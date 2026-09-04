@@ -1,17 +1,16 @@
-# Sweet Crumbs — Multi-page version
+# Liivhuu's Baking Adventure
 
-The original single-page HTML has been split into real pages instead of hiding every section inside `index.html`.
+Production-ready static bakery website starter, designed around the supplied Sweet Crumbs reference aesthetic.
+
+## Deploy
+Upload this folder to Netlify, Vercel, GitHub Pages, or any static host. No build step is required.
+
+## Before launch
+1. Replace the placeholder WhatsApp number `27000000000` in `js/app.js` and HTML links.
+2. Replace sample product names/prices.
+3. Replace Unsplash image URLs with your own optimized bakery photos.
+4. Update email, location, opening hours and social links.
+5. Test WhatsApp links on mobile and desktop.
 
 ## Pages
-- `index.html` — Home
-- `menu.html` — Menu
-- `custom-cakes.html` — Custom Cakes
-- `about.html` — About Us
-- `order.html` — Order Online
-- `contact.html` — Contact
-
-## Shared files
-- `src/style.css` — shared styling / Tailwind entry
-- `src/main.ts` — shared interactions
-
-The original uploaded file referenced dynamic JavaScript but did not include its implementation. The Contact section was also missing its opening wrapper, so that page was reconstructed from the contact fields/details that were present.
+Home, Menu, Custom Cakes, Our Story, Contact.
