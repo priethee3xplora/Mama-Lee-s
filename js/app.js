@@ -755,3 +755,112 @@ document.addEventListener(
 
     }
 );
+// ============================================
+// HOMEPAGE FEATURED PRODUCTS
+// ============================================
+//
+// These are the products shown on index.html.
+// Change these whenever you want to change
+// the homepage favourites.
+//
+// ============================================
+
+const featuredItems = [
+
+    {
+        name: "...",
+        price: "...",
+        images: [
+            "assets/8.png"
+        ]
+    },
+
+
+    {
+        name: "...",
+        price: "...",
+        images: [
+            "assets/16.png"
+        ]
+    }
+
+];
+
+
+
+// ============================================
+// GENERATE HOMEPAGE FEATURED PRODUCTS
+// ============================================
+
+const featuredGrid =
+    document.querySelector("#featured-grid");
+
+
+if (featuredGrid) {
+
+    featuredItems.forEach((item) => {
+
+        const card =
+            document.createElement("article");
+
+        card.className = "card";
+
+
+        const galleryData =
+            item.images.join(",");
+
+
+        card.innerHTML = `
+
+            <div class="product-image">
+
+                <img
+                    src="${item.images[0]}"
+                    alt="${item.name}"
+                    loading="lazy"
+                >
+
+
+                <button
+                    class="view-gallery"
+                    type="button"
+                    data-images="${galleryData}"
+                    aria-label="View photos of ${item.name}"
+                >
+                    View photos
+                </button>
+
+            </div>
+
+
+            <div class="card-body">
+
+                <h3>
+                    ${item.name}
+                </h3>
+
+
+                <div class="price">
+                    ${item.price}
+                </div>
+
+
+                <button
+                    class="order"
+                    type="button"
+                    data-order="${item.name}"
+                >
+                    Order via WhatsApp →
+                </button>
+
+            </div>
+
+        `;
+
+
+        featuredGrid.appendChild(card);
+
+    });
+
+}
+
