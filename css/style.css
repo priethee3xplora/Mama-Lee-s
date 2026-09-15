@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap');
 
 :root {
@@ -6,32 +7,41 @@
     --cream: #fbf4ef;
     --ink: #4b3934;
     --muted: #786963;
-    --paper: #fffdfb
+    --paper: #fffdfb;
 }
 
 * {
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth
+    scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
     background: var(--cream);
     color: var(--ink);
-    font-family: "DM Sans", sans-serif
+    font-family: "DM Sans", sans-serif;
 }
 
 a {
-    color: inherit
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
 }
 
 .wrap {
     width: min(1180px, 92%);
-    margin: auto
+    margin: auto;
 }
+
+
+/* ===============================
+   TOP BAR
+================================ */
 
 .top {
     background: #5d4038;
@@ -39,15 +49,20 @@ a {
     text-align: center;
     padding: 9px;
     font-size: 13px;
-    letter-spacing: .04em
+    letter-spacing: .04em;
 }
+
+
+/* ===============================
+   NAVIGATION
+================================ */
 
 header {
     background: rgba(255, 253, 251, .96);
     position: sticky;
     top: 0;
     z-index: 20;
-    border-bottom: 1px solid #eaded7
+    border-bottom: 1px solid #eaded7;
 }
 
 .nav {
@@ -55,46 +70,51 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 24px
+    gap: 24px;
 }
 
 .brand {
     display: flex;
     align-items: center;
     gap: 12px;
-    text-decoration: none
+    text-decoration: none;
 }
 
 .brand img {
     width: 60px;
     height: 60px;
     object-fit: cover;
-    border-radius: 50%
+    border-radius: 50%;
 }
 
 .brand b {
     font-family: "Playfair Display";
     font-size: 22px;
-    color: #80514b
+    color: #80514b;
 }
 
 .links {
     display: flex;
     gap: 27px;
-    align-items: center
+    align-items: center;
 }
 
 .links a {
     text-decoration: none;
-    font-size: 14px
+    font-size: 14px;
 }
 
 .cta {
     background: var(--rose);
     color: white !important;
     padding: 12px 19px;
-    border-radius: 999px
+    border-radius: 999px;
 }
+
+
+/* ===============================
+   HERO
+================================ */
 
 .hero {
     min-height: 650px;
@@ -102,7 +122,7 @@ header {
     grid-template-columns: 1.02fr .98fr;
     align-items: center;
     gap: 55px;
-    padding: 70px 0
+    padding: 70px 0;
 }
 
 .eyebrow {
@@ -110,7 +130,7 @@ header {
     letter-spacing: .2em;
     font-size: 12px;
     color: var(--rose);
-    font-weight: 600
+    font-weight: 600;
 }
 
 .hero h1 {
@@ -118,26 +138,26 @@ header {
     font-size: clamp(50px, 6vw, 82px);
     line-height: .98;
     margin: 16px 0;
-    color: #654842
+    color: #654842;
 }
 
 .hero h1 em {
     color: var(--rose);
-    font-weight: 500
+    font-weight: 500;
 }
 
 .hero p {
     font-size: 17px;
     line-height: 1.8;
     color: var(--muted);
-    max-width: 560px
+    max-width: 560px;
 }
 
 .actions {
     display: flex;
     gap: 12px;
     margin-top: 28px;
-    flex-wrap: wrap
+    flex-wrap: wrap;
 }
 
 .btn {
@@ -146,22 +166,27 @@ header {
     border-radius: 999px;
     text-decoration: none;
     font-weight: 600;
-    border: 1px solid var(--rose)
+    border: 1px solid var(--rose);
 }
 
 .primary {
     background: var(--rose);
-    color: white
+    color: white;
 }
 
 .secondary {
     color: var(--rose);
-    background: transparent
+    background: transparent;
 }
+
+
+/* ===============================
+   HERO ART
+================================ */
 
 .hero-art {
     position: relative;
-    min-height: 530px
+    min-height: 530px;
 }
 
 .hero-art:before {
@@ -169,18 +194,18 @@ header {
     position: absolute;
     inset: 20px 0 0 35px;
     border-radius: 50% 50% 18% 18%;
-    background: #eed7cf
+    background: #eed7cf;
 }
 
 .hero-img {
     position: absolute;
-    width: 88%;
+    width: 68%;
     height: 86%;
     right: 0;
     top: 6%;
     object-fit: cover;
     border-radius: 50% 50% 22px 22px;
-    box-shadow: 0 25px 60px #8b655322
+    box-shadow: 0 25px 60px #8b655322;
 }
 
 .stamp {
@@ -197,84 +222,152 @@ header {
     text-align: center;
     font-family: "Playfair Display";
     font-size: 15px;
-    box-shadow: 0 12px 30px #6d4a3a22
+    box-shadow: 0 12px 30px #6d4a3a22;
 }
+
+
+/* ===============================
+   BAND / STATS
+================================ */
 
 .band {
     background: #ead3ca;
-    padding: 42px 0
+    padding: 42px 0;
 }
 
 .stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    text-align: center
+    text-align: center;
 }
 
 .stat strong {
     font-family: "Playfair Display";
-    font-size: 30px
+    font-size: 30px;
 }
 
 .stat span {
     display: block;
     color: var(--muted);
     font-size: 13px;
-    margin-top: 4px
+    margin-top: 4px;
 }
 
+
+/* ===============================
+   SECTIONS
+================================ */
+
 section {
-    padding: 86px 0
+    padding: 86px 0;
 }
 
 .section-head {
     text-align: center;
     max-width: 650px;
-    margin: 0 auto 42px
+    margin: 0 auto 42px;
 }
 
 .section-head h2 {
     font: 600 48px "Playfair Display";
     margin: 10px 0;
-    color: #634740
+    color: #634740;
 }
 
 .section-head p {
     color: var(--muted);
-    line-height: 1.7
+    line-height: 1.7;
 }
+
+
+/* ===============================
+   REGULAR PRODUCT GRID
+================================ */
 
 .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px
+    gap: 20px;
 }
 
 .card {
     background: var(--paper);
     border: 1px solid #eee0d9;
     border-radius: 18px;
-    overflow: hidden
+    overflow: hidden;
+    transition: transform .25s ease, box-shadow .25s ease;
 }
 
-.card img {
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px #6d4a3a18;
+}
+
+
+/* ===============================
+   PRODUCT IMAGE + GALLERY BUTTON
+================================ */
+
+.product-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.product-image > img {
+    display: block;
     width: 100%;
     height: 225px;
-    object-fit: cover
+    object-fit: cover;
 }
 
+
+/* Gallery button */
+
+.view-gallery {
+    position: absolute;
+    bottom: 14px;
+    right: 14px;
+
+    border: 0;
+    border-radius: 999px;
+
+    background: rgba(255, 253, 251, .94);
+    color: var(--rose);
+
+    padding: 9px 14px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 18px rgba(75, 57, 52, .15);
+
+    transition: transform .2s ease, background .2s ease;
+}
+
+.view-gallery:hover {
+    transform: translateY(-2px);
+    background: white;
+}
+
+
+/* ===============================
+   PRODUCT CARD
+================================ */
+
 .card-body {
-    padding: 20px
+    padding: 20px;
 }
 
 .card h3 {
     font: 600 22px "Playfair Display";
-    margin: 0 0 7px
+    margin: 0 0 7px;
 }
 
 .price {
     color: var(--rose);
-    font-weight: 700
+    font-weight: 700;
 }
 
 .order {
@@ -283,97 +376,370 @@ section {
     color: var(--rose);
     text-decoration: none;
     font-weight: 600;
-    font-size: 13px
+    font-size: 13px;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
 }
+
+
+/* ===============================
+   BIRTHDAY CAKES
+================================ */
+
+.birthday-section {
+    background: #fffaf7;
+    border-top: 1px solid #eaded7;
+    border-bottom: 1px solid #eaded7;
+}
+
+.birthday-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+}
+
+.birthday-card {
+    background: var(--paper);
+    border: 1px solid #eee0d9;
+    border-radius: 22px;
+    overflow: hidden;
+
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.birthday-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 40px #6d4a3a18;
+}
+
+.birthday-image {
+    position: relative;
+}
+
+.birthday-image > img {
+    display: block;
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+}
+
+.birthday-info {
+    padding: 24px;
+}
+
+.birthday-info h3 {
+    font: 600 27px "Playfair Display";
+    margin: 0 0 8px;
+    color: #634740;
+}
+
+.birthday-info p {
+    color: var(--muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.birthday-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 18px;
+}
+
+.birthday-bottom .order {
+    margin-top: 0;
+}
+
+
+/* ===============================
+   CUSTOM BIRTHDAY CTA
+================================ */
+
+.custom-birthday {
+    margin-top: 45px;
+    padding: 38px 42px;
+
+    background: #ead3ca;
+    border-radius: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.custom-birthday h3 {
+    font: 600 34px "Playfair Display";
+    color: #634740;
+    margin: 8px 0;
+}
+
+.custom-birthday p {
+    max-width: 650px;
+    color: var(--muted);
+    line-height: 1.7;
+    margin: 0;
+}
+
+.custom-birthday .btn {
+    white-space: nowrap;
+}
+
+
+/* ===============================
+   GALLERY MODAL
+================================ */
+
+.gallery-modal {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(40, 28, 25, .92);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity .25s ease,
+        visibility .25s ease;
+
+    z-index: 200;
+}
+
+.gallery-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.gallery-content {
+    max-width: 900px;
+    width: min(900px, 85vw);
+    text-align: center;
+}
+
+.gallery-main-image {
+    display: block;
+    width: 100%;
+    max-height: 78vh;
+    object-fit: contain;
+    border-radius: 18px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .35);
+}
+
+.gallery-counter {
+    margin-top: 14px;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* ===============================
+   GALLERY ARROWS
+================================ */
+
+.gallery-prev,
+.gallery-next {
+    position: absolute;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 52px;
+    height: 52px;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, .95);
+    color: var(--rose);
+
+    font-size: 38px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    display: grid;
+    place-items: center;
+
+    transition: transform .2s ease;
+}
+
+.gallery-prev:hover,
+.gallery-next:hover {
+    transform: translateY(-50%) scale(1.08);
+}
+
+.gallery-prev {
+    left: 25px;
+}
+
+.gallery-next {
+    right: 25px;
+}
+
+
+/* ===============================
+   GALLERY CLOSE
+================================ */
+
+.gallery-close {
+    position: absolute;
+
+    top: 20px;
+    right: 25px;
+
+    width: 45px;
+    height: 45px;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, .95);
+    color: var(--ink);
+
+    font-size: 30px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    z-index: 5;
+}
+
+
+/* ===============================
+   STORY
+================================ */
 
 .story {
     display: grid;
     grid-template-columns: .9fr 1.1fr;
     gap: 70px;
-    align-items: center
+    align-items: center;
 }
 
 .story-img {
     height: 470px;
     width: 100%;
     object-fit: cover;
-    border-radius: 24px
+    border-radius: 24px;
 }
 
 .story h2 {
-    font: 600 48px "Playfair Display"
+    font: 600 48px "Playfair Display";
 }
 
 .story p {
     line-height: 1.9;
-    color: var(--muted)
+    color: var(--muted);
 }
+
+
+/* ===============================
+   QUOTE
+================================ */
 
 .quote {
     background: #fff;
     padding: 70px 8%;
     border-radius: 30px;
-    text-align: center
+    text-align: center;
 }
 
 .quote blockquote {
     font: 500 32px "Playfair Display";
     line-height: 1.35;
-    margin: 0
+    margin: 0;
 }
 
 .quote cite {
     display: block;
     margin-top: 20px;
     color: var(--rose);
-    font-style: normal
+    font-style: normal;
 }
+
+
+/* ===============================
+   FOOTER
+================================ */
 
 footer {
     background: #5d4038;
     color: #fff;
-    padding: 55px 0
+    padding: 55px 0;
 }
 
 .footergrid {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-    gap: 35px
+    gap: 35px;
 }
 
 .footergrid h3 {
-    font: 600 25px "Playfair Display"
+    font: 600 25px "Playfair Display";
 }
 
 .footergrid p,
 .footergrid a {
     color: #eadbd5;
     line-height: 1.8;
-    text-decoration: none
+    text-decoration: none;
 }
+
+
+/* ===============================
+   FLOATING WHATSAPP
+================================ */
 
 .whatsapp {
     position: fixed;
     right: 22px;
     bottom: 22px;
+
     background: #25d366;
     color: #fff;
+
     text-decoration: none;
+
     padding: 14px 19px;
     border-radius: 999px;
+
     font-weight: 700;
+
     z-index: 30;
-    box-shadow: 0 10px 30px #0002
+
+    box-shadow: 0 10px 30px #0002;
 }
+
+
+/* ===============================
+   MOBILE MENU
+================================ */
 
 .mobile {
     display: none;
     border: 0;
     background: none;
-    font-size: 26px
+    font-size: 26px;
 }
 
+
+/* ===============================
+   TABLET
+================================ */
+
 @media (max-width: 1100px) {
+
     .links {
         display: none;
     }
@@ -388,17 +754,27 @@ footer {
 
     .links.open {
         display: flex;
+
         position: absolute;
+
         top: 84px;
         left: 0;
         right: 0;
+
         background: #fffdfb;
+
         padding: 25px;
+
         flex-direction: column;
+
         gap: 20px;
+
         align-items: center;
-        box-shadow: 0 10px 25px rgba(0,0,0,.08);
+
+        box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+
         border-top: 1px solid #eaded7;
+
         z-index: 100;
     }
 
@@ -419,6 +795,15 @@ footer {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .birthday-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .custom-birthday {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
     .footergrid {
         grid-template-columns: 1fr 1fr;
     }
@@ -428,49 +813,90 @@ footer {
         gap: 20px;
     }
 }
-@media(max-width:560px) {
+
+
+/* ===============================
+   MOBILE
+================================ */
+
+@media (max-width: 560px) {
+
     section {
-        padding: 60px 0
+        padding: 60px 0;
     }
 
     .hero {
-        padding: 45px 0
+        padding: 45px 0;
     }
 
     .hero-art {
-        min-height: 360px
+        min-height: 360px;
     }
 
     .grid {
-        grid-template-columns: 1fr
+        grid-template-columns: 1fr;
+    }
+
+    .birthday-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .birthday-image > img {
+        height: 280px;
+    }
+
+    .birthday-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .custom-birthday {
+        padding: 30px 24px;
+    }
+
+    .custom-birthday h3 {
+        font-size: 29px;
     }
 
     .footergrid {
-        grid-template-columns: 1fr
+        grid-template-columns: 1fr;
     }
 
     .section-head h2,
     .story h2 {
-        font-size: 38px
-    }
-    @media (max-width: 900px) {
-    .links.open {
-        display: flex;
-        position: absolute;
-        top: 84px;
-        left: 0;
-        right: 0;
-        background: #fffdfb;
-        padding: 25px;
-        flex-direction: column;
-        gap: 20px;
-        align-items: center;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-        border-top: 1px solid #eaded7;
+        font-size: 38px;
     }
 
-    .links.open a {
-        margin: 0;
+    .gallery-modal {
+        padding: 20px;
     }
-}
+
+    .gallery-content {
+        width: 100%;
+    }
+
+    .gallery-main-image {
+        max-height: 70vh;
+        border-radius: 14px;
+    }
+
+    .gallery-prev,
+    .gallery-next {
+        width: 42px;
+        height: 42px;
+        font-size: 30px;
+    }
+
+    .gallery-prev {
+        left: 10px;
+    }
+
+    .gallery-next {
+        right: 10px;
+    }
+
+    .gallery-close {
+        top: 12px;
+        right: 12px;
+    }
 }
